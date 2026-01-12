@@ -1,0 +1,169 @@
+[gd_scene load_steps=17 format=3 uid="uid://dc2y80l3ut6ac"]
+
+[ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="1_nn08x"]
+[ext_resource type="Script" uid="uid://cotu33y5xe5py" path="res://Scripts/States/FSM.gd" id="2_52ee3"]
+[ext_resource type="Script" uid="uid://cnvl733u4i34b" path="res://Scripts/States/GroundState.gd" id="3_bhhdu"]
+[ext_resource type="Script" uid="uid://doauy1wr14ugf" path="res://Scripts/States/AirborneState.gd" id="4_megsn"]
+[ext_resource type="Script" uid="uid://btahc4ldeix6e" path="res://Scripts/States/JumpState.gd" id="5_yoq75"]
+[ext_resource type="Texture2D" uid="uid://ccd7kxqjjdu70" path="res://Textures/Red Panda Sprite Sheet.png" id="6_ksbbd"]
+[ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum/GumManager.gd" id="7_bhhdu"]
+[ext_resource type="Script" uid="uid://cnji10wlbrn2q" path="res://Scripts/Gum/BalloonAbility.gd" id="8_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://c5ksibp2qek5u" path="res://Textures/emote__.png" id="8_megsn"]
+
+[sub_resource type="Animation" id="Animation_bhhdu"]
+resource_name = "Falling"
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+
+[sub_resource type="Animation" id="Animation_coq8p"]
+resource_name = "Idle"
+length = 0.40000668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666668, 0.13333334, 0.2, 0.26666668, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_52ee3"]
+resource_name = "Jumping"
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_2nij2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7cbxl"]
+resource_name = "Run"
+length = 0.53334004
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pr8v"]
+_data = {
+&"Falling": SubResource("Animation_bhhdu"),
+&"Idle": SubResource("Animation_coq8p"),
+&"Jumping": SubResource("Animation_52ee3"),
+&"RESET": SubResource("Animation_2nij2"),
+&"Run": SubResource("Animation_7cbxl")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ney"]
+size = Vector2(34, 24)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "anim_player") groups=["Player"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_nn08x")
+player_sprite = NodePath("Sprite2D")
+anim_player = NodePath("Sprite2D/AnimationPlayer")
+
+[node name="MovementFSM" type="Node2D" parent="." node_paths=PackedStringArray("mc", "animPlayer", "starting_state")]
+script = ExtResource("2_52ee3")
+mc = NodePath("..")
+animPlayer = NodePath("../Sprite2D/AnimationPlayer")
+starting_state = NodePath("GroundState")
+
+[node name="GroundState" type="Node2D" parent="MovementFSM" node_paths=PackedStringArray("jumpState", "airborneState")]
+script = ExtResource("3_bhhdu")
+jumpState = NodePath("../JumpState")
+airborneState = NodePath("../AirborneState")
+
+[node name="AirborneState" type="Node2D" parent="MovementFSM" node_paths=PackedStringArray("groundState")]
+script = ExtResource("4_megsn")
+groundState = NodePath("../GroundState")
+
+[node name="JumpState" type="Node2D" parent="MovementFSM" node_paths=PackedStringArray("groundState", "airborneState")]
+script = ExtResource("5_yoq75")
+groundState = NodePath("../GroundState")
+airborneState = NodePath("../AirborneState")
+
+[node name="GumManager" type="Node2D" parent="MovementFSM"]
+script = ExtResource("7_bhhdu")
+CHEW_COOLDOWN_DURATION = 0.5
+
+[node name="BalloonAbility" type="Node2D" parent="MovementFSM/GumManager" node_paths=PackedStringArray("ground_state", "balloon_sprite")]
+script = ExtResource("8_bhhdu")
+ground_state = NodePath("../../AirborneState")
+BALLOON_FORCE = 300.0
+BALLOON_GRAVITY = 5.0
+balloon_sprite = NodePath("Sprite2D")
+ability_name = "Gum Balloon"
+
+[node name="Sprite2D" type="Sprite2D" parent="MovementFSM/GumManager/BalloonAbility"]
+visible = false
+modulate = Color(1, 0.39215687, 1, 1)
+texture_filter = 1
+position = Vector2(0, -47)
+scale = Vector2(3, 3)
+texture = ExtResource("8_megsn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("6_ksbbd")
+hframes = 8
+vframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_8pr8v")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -12)
+shape = SubResource("RectangleShape2D_o4ney")
