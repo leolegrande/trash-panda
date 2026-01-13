@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bo8blkubb46"]
+
+[ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="1_ckivy"]
+[ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="2_1k4by"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlatformTileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_ckivy")
+
+[node name="Player" parent="." instance=ExtResource("2_1k4by")]
+position = Vector2(-217, 108)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+limit_enabled = false
