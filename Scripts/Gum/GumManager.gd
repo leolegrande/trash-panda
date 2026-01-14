@@ -43,6 +43,17 @@ func handle_cooldown(delta):
 	if ability_cooldown > 0:
 		ability_cooldown = clampf(ability_cooldown-delta, 0, ABILITY_COOLDOWN_DURATION)
 
+#func _unhandled_input(event):
+	#if (!using_ability):
+		#if event.is_action_pressed("Chew"):
+			#chew_gum()
+		#if event.is_action_pressed("GumAbility"):
+			#use_ability()
+		#if event.is_action_pressed("Next Ability"):
+			#change_ability(1)
+		#if event.is_action_pressed("Prev Ability"):
+			#change_ability(-1)
+
 func handle_input():
 	if Input.is_action_just_pressed("Chew"):
 		chew_gum()

@@ -17,3 +17,6 @@ func process_physics(delta : float):
 
 func process_frame(delta : float):
 	return
+
+func process_input(event : InputEvent):
+	return
