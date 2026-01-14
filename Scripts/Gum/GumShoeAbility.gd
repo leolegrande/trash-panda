@@ -26,7 +26,7 @@ func enter():
 		#return
 
 func process_physics(delta : float):
-	gm.decrement_chew_value(delta)
+	#gm.decrement_chew_value(delta)
 	mc.velocity = get_wall_movement()
 	mc.move_and_slide()
 	flip_player()

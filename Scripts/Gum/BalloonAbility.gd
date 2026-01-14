@@ -21,7 +21,7 @@ func process_physics(delta : float):
 	if (gm.chew_value <= 0):
 		gm.parent.change_state(ground_state)
 		return
-	gm.decrement_chew_value(delta)
+	#gm.decrement_chew_value(delta)
 	gm.mc.get_movement()
 	gm.mc.apply_gravity(delta)
 	gm.mc.move()

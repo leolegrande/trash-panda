@@ -30,12 +30,13 @@ func _process(delta):
 		handle_input()
 	if (infinite_chew):
 		chew_value = MAX_CHEW_VALUE
+	decrement_chew_value(delta)
 
 func start_ability_cooldown():
 	ability_cooldown = ABILITY_COOLDOWN_DURATION
 
 func decrement_chew_value(delta : float):
-	chew_value -= delta
+	chew_value = clampf(chew_value-delta, 0, 5) 
 
 func handle_cooldown(delta):
 	if chew_cooldown > 0:
@@ -93,7 +94,7 @@ func use_ability():
 	if (ability_cooldown > 0):
 		print("ability still on cooldown!")
 		return
-	if (chew_value < 1):
-		print("not enough chew to use ability!")
-		return
+	#if (chew_value < 1):
+		#print("not enough chew to use ability!")
+		#return
 	parent.change_state(current_ability)
