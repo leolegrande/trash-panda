@@ -9,8 +9,8 @@ func enter():
 	return
 
 func process_physics(delta : float):
+	mc.get_movement()
 	mc.move()
-	mc.move_and_slide()
 	if (mc.velocity.x != 0 && animPlayer.current_animation != "Run"):
 		animPlayer.play("Run")
 	elif (mc.velocity.x == 0 && animPlayer.current_animation != "Idle"):

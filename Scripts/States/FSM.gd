@@ -24,7 +24,7 @@ func change_state(newState : State):
 		current_state.exit()
 	current_state = newState
 	current_state.enter()
-	print("changing state to ", current_state.name)
+	#print("changing state to ", current_state.name)
 
 func _physics_process(delta):
 	current_state.process_physics(delta)

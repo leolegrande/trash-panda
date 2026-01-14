@@ -13,7 +13,7 @@ var gravity : float = 30
 func _ready():
 	gravity = DEFAULT_GRAVITY
 
-func move():
+func get_movement():
 	var inputAxis = Input.get_axis("Left", "Right")
 	velocity = Vector2(inputAxis * move_speed, velocity.y)
 	flip_player()
@@ -33,5 +33,8 @@ func flip_player():
 func end_jump_early():
 	velocity.y = 0
 
-func apply_gravity(delta : float):
-	velocity.y += gravity
+func apply_gravity(_delta : float):
+	velocity += -gravity * up_direction
+
+func move():
+	move_and_slide()

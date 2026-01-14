@@ -22,9 +22,9 @@ func process_physics(delta : float):
 		gm.parent.change_state(ground_state)
 		return
 	gm.decrement_chew_value(delta)
-	gm.mc.move()
+	gm.mc.get_movement()
 	gm.mc.apply_gravity(delta)
-	gm.mc.move_and_slide()
+	gm.mc.move()
 	if (gm.mc.is_on_floor()):
 		gm.parent.change_state(ground_state)
 		return
@@ -34,6 +34,7 @@ func exit():
 	gm.using_ability = false
 	gm.mc.gravity = gm.mc.DEFAULT_GRAVITY
 	balloon_sprite.visible = false
+	gm.start_ability_cooldown()
 	return
 
 func init_balloon():

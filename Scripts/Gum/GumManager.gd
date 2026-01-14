@@ -3,12 +3,16 @@ extends State
 class_name GumManager
 
 @export var MAX_CHEW_VALUE : float = 5.0
-@export var CHEW_COOLDOWN_DURATION : float = 1.0
+@export var CHEW_COOLDOWN_DURATION : float = 0.5
+@export var ABILITY_COOLDOWN_DURATION : float = 0.5
 var chew_value : float
 @export var ability_list : Array[GumAbility]
 var current_ability : GumAbility
+var current_ability_index : int = 0
 var chew_cooldown : float
+var ability_cooldown : float
 var using_ability : bool
+@export var infinite_chew : bool = false
 
 func _ready():
 	chew_value = 0
@@ -18,12 +22,17 @@ func _ready():
 		if (c is GumAbility):
 			c.gm = self
 			ability_list.append(c)
-	if (ability_list[0]):
-		current_ability = ability_list[0]
+	set_ability(0)
 
 func _process(delta):
 	handle_cooldown(delta)
-	handle_input()
+	if (!using_ability):
+		handle_input()
+	if (infinite_chew):
+		chew_value = MAX_CHEW_VALUE
+
+func start_ability_cooldown():
+	ability_cooldown = ABILITY_COOLDOWN_DURATION
 
 func decrement_chew_value(delta : float):
 	chew_value -= delta
@@ -31,12 +40,29 @@ func decrement_chew_value(delta : float):
 func handle_cooldown(delta):
 	if chew_cooldown > 0:
 		chew_cooldown = clampf(chew_cooldown-delta, 0, CHEW_COOLDOWN_DURATION)
+	if ability_cooldown > 0:
+		ability_cooldown = clampf(ability_cooldown-delta, 0, ABILITY_COOLDOWN_DURATION)
 
 func handle_input():
 	if Input.is_action_just_pressed("Chew"):
 		chew_gum()
 	if Input.is_action_just_pressed("GumAbility"):
 		use_ability()
+	if Input.is_action_just_pressed("Next Ability"):
+		change_ability(1)
+	if Input.is_action_just_pressed("Prev Ability"):
+		change_ability(-1)
+
+func change_ability(dir : int):
+	if (ability_list.size() <= 1): return
+	set_ability((current_ability_index+dir)%ability_list.size())
+
+func set_ability(index : int):
+	var new_ability = ability_list[index]
+	if (new_ability):
+		current_ability = new_ability
+		current_ability_index = ability_list.find(current_ability)
+		print(current_ability_index)
 
 func chew_gum():
 	if (chew_cooldown > 0):
@@ -53,5 +79,10 @@ func chew_gum():
 		chew_cooldown = CHEW_COOLDOWN_DURATION
 
 func use_ability():
-	if (chew_value >= 1):
-		parent.change_state(current_ability)
+	if (ability_cooldown > 0):
+		print("ability still on cooldown!")
+		return
+	if (chew_value < 1):
+		print("not enough chew to use ability!")
+		return
+	parent.change_state(current_ability)

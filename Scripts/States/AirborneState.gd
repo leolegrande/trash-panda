@@ -6,9 +6,9 @@ func enter():
 	animPlayer.play("Falling")
 
 func process_physics(delta : float):
-	mc.move()
+	mc.get_movement()
 	mc.apply_gravity(delta)
-	mc.move_and_slide()
+	mc.move()
 	if (mc.is_on_floor()):
 		parent.change_state(groundState)
 		return

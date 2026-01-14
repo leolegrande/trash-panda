@@ -16,4 +16,5 @@ func _process(_delta):
 	debug_string += "MOVE STATE: %s\n" % fsm.current_state.name
 	debug_string += "CHEW VALUE: %.1f\n" % gm.chew_value
 	debug_string += "CHEW COOLDOWN: %.1f\n" % gm.chew_cooldown
+	debug_string += "GUM ABILITY: %s\n" % gm.current_ability.ability_name
 	text = debug_string
