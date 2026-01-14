@@ -6,7 +6,6 @@ class_name GumShoeAbility
 @export var ceiling_detection : RayCast2D
 @export var right_wall_detection : RayCast2D
 @export var left_wall_detection : RayCast2D
-var lmb_released : bool
 
 var wall_normal : Vector2
 var snap_position : Vector2
@@ -25,7 +24,7 @@ func enter():
 		#gm.parent.change_state(airborneState)
 		#return
 
-func process_physics(delta : float):
+func process_physics(_delta : float):
 	#gm.decrement_chew_value(delta)
 	mc.velocity = get_wall_movement()
 	mc.move_and_slide()
@@ -37,7 +36,7 @@ func process_physics(delta : float):
 		print("exiting gumshoe: pressed jump")
 		gm.parent.change_state(airborneState)
 		return
-	if (Input.is_action_just_pressed("GumAbility") && lmb_released):
+	if (Input.is_action_just_released("GumAbility")):
 		print("exiting gumshoe: pressed lmb")
 		gm.parent.change_state(airborneState)
 		return
@@ -49,15 +48,11 @@ func process_physics(delta : float):
 		print("exiting gumshoe: not on floor")
 		gm.parent.change_state(airborneState)
 		return
-	#literally the shittiest workaround but whatever
-	if (Input.is_action_just_released("GumAbility")):
-		lmb_released = true
 
 func exit():
 	if (gm.using_ability):
 		mc.position += wall_normal*30
 	gm.using_ability = false
-	lmb_released = true
 	mc.up_direction = Vector2.UP
 	mc.rotation_degrees = 0
 	gm.start_ability_cooldown()
@@ -81,7 +76,6 @@ func detect_collisions() -> bool:
 
 func stick_to_wall():
 	gm.using_ability = true
-	lmb_released = false
 	rotate_player()
 	mc.global_position = snap_position
 	mc.up_direction = wall_normal
@@ -90,8 +84,9 @@ func get_wall_movement() -> Vector2:
 	if (!on_ceiling()):
 		var inputAxis = Input.get_axis("Down", "Up")
 		return Vector2(0, -inputAxis*GUMSHOE_MOVE_SPEED)
-	var inputAxis = Input.get_axis("Left", "Right")
-	return Vector2(inputAxis*GUMSHOE_MOVE_SPEED, 0)
+	else:
+		var inputAxis = Input.get_axis("Left", "Right")
+		return Vector2(inputAxis*GUMSHOE_MOVE_SPEED, 0)
 
 func rotate_player():
 	if (on_ceiling()):

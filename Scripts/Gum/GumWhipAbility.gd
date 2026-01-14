@@ -6,7 +6,7 @@ func _ready():
 func enter():
 	return
 
-func process_physics(delta : float):
+func process_physics(_delta : float):
 	return
 
 func exit():
