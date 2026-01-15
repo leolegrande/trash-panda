@@ -53,8 +53,11 @@ theme_override_font_sizes/font_size = 30
 text = "DEBUG TEXT"
 script = ExtResource("8_85f08")
 
-[node name="Lever" parent="." instance=ExtResource("5_kf3lo")]
+[node name="Lever" parent="." node_paths=PackedStringArray("switchable") instance=ExtResource("5_kf3lo")]
 position = Vector2(-162, -208)
+switchable = NodePath("../ElectricFence")
 
 [node name="ElectricFence" parent="." instance=ExtResource("6_e3pal")]
 position = Vector2(-317, -240)
+
+[connection signal="body_entered" from="ElectricFence" to="Player/Label" method="_on_electric_fence_body_entered"]

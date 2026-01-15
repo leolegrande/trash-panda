@@ -7,7 +7,7 @@ class_name JumpState
 
 func enter():
 	mc.jump()
-	animPlayer.play("Jumping")
+	animPlayer.play("jump")
 
 func process_physics(delta : float):
 	mc.get_movement()

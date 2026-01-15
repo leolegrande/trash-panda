@@ -3,7 +3,7 @@ extends State
 @export var groundState : State
 
 func enter():
-	animPlayer.play("Falling")
+	animPlayer.play("fall")
 
 func process_physics(delta : float):
 	mc.get_movement()
