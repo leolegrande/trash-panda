@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/tutorial_scene.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Textures/icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [dotnet]
 
 project/assembly_name="TRASH PANDA"
@@ -112,8 +117,9 @@ Reset={
 2d_physics/layer_1="Floors"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Trigger"
-2d_physics/layer_4="Walls"
-2d_physics/layer_5="Ceiling"
+2d_physics/layer_4="Whip"
+2d_physics/layer_5="Whippable"
+2d_physics/layer_6="Death"
 
 [physics]
 

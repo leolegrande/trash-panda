@@ -5,6 +5,7 @@ class_name GumManager
 @export var MAX_CHEW_VALUE : float = 5.0
 @export var CHEW_COOLDOWN_DURATION : float = 0.5
 @export var ABILITY_COOLDOWN_DURATION : float = 0.5
+@export var CHEW_DECAY_SPEED : float = 1.0
 var chew_value : float
 @export var ability_list : Array[GumAbility]
 var current_ability : GumAbility
@@ -36,7 +37,7 @@ func start_ability_cooldown():
 	ability_cooldown = ABILITY_COOLDOWN_DURATION
 
 func decrement_chew_value(delta : float):
-	chew_value = clampf(chew_value-delta, 0, 5) 
+	chew_value = clampf(chew_value-(delta*CHEW_DECAY_SPEED), 0, 5) 
 
 func handle_cooldown(delta):
 	if chew_cooldown > 0:
@@ -74,7 +75,6 @@ func set_ability(index : int):
 	if (new_ability):
 		current_ability = new_ability
 		current_ability_index = ability_list.find(current_ability)
-		print(current_ability_index)
 
 func chew_gum():
 	if (chew_cooldown > 0):
