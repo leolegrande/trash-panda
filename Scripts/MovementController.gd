@@ -7,8 +7,8 @@ class_name MovementController
 var gravity : float = 30
 @export var DEFAULT_GRAVITY : float = 30
 
-@export var player_sprite : Sprite2D
-@export var anim_player : AnimationPlayer
+@export var player_sprite : AnimatedSprite2D
+#@export var anim_player : AnimationPlayer
 
 func _ready():
 	gravity = DEFAULT_GRAVITY

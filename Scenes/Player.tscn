@@ -612,17 +612,16 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "anim_player") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite") groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_nn08x")
-player_sprite = NodePath("")
-anim_player = NodePath("")
+player_sprite = NodePath("AnimatedSprite2D")
 
 [node name="MovementFSM" type="Node2D" parent="." node_paths=PackedStringArray("mc", "animPlayer", "starting_state")]
 script = ExtResource("2_52ee3")
 mc = NodePath("..")
-animPlayer = NodePath("")
+animPlayer = NodePath("../AnimatedSprite2D")
 starting_state = NodePath("GroundState")
 
 [node name="GroundState" type="Node2D" parent="MovementFSM" node_paths=PackedStringArray("jumpState", "airborneState")]
@@ -712,5 +711,6 @@ position = Vector2(0, -35)
 scale = Vector2(1.5333333, 1.5333333)
 sprite_frames = SubResource("SpriteFrames_yf17c")
 animation = &"idle"
+frame_progress = 0.6066953
 
 [connection signal="area_entered" from="MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint" to="MovementFSM/GumManager/WhipAbility" method="_on_whip_hitbox_area_entered"]

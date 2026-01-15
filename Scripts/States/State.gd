@@ -4,7 +4,7 @@ class_name State
 
 var parent : FSM
 var mc : MovementController
-var animPlayer : AnimationPlayer
+var animPlayer : AnimatedSprite2D
 
 func enter():
 	return

@@ -11,10 +11,10 @@ func enter():
 func process_physics(delta : float):
 	mc.get_movement()
 	mc.move()
-	if (mc.velocity.x != 0 && animPlayer.current_animation != "Run"):
-		animPlayer.play("Run")
-	elif (mc.velocity.x == 0 && animPlayer.current_animation != "Idle"):
-		animPlayer.play("Idle")
+	if (mc.velocity.x != 0 && animPlayer.animation != "run"):
+		animPlayer.play("run")
+	elif (mc.velocity.x == 0 && animPlayer.animation != "idle"):
+		animPlayer.play("idle")
 	if (Input.is_action_just_pressed("Jump")):
 		parent.change_state(jumpState)
 		return
