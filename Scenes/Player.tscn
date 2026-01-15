@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dc2y80l3ut6ac"]
+[gd_scene load_steps=20 format=3 uid="uid://dc2y80l3ut6ac"]
 
 [ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="1_nn08x"]
 [ext_resource type="Script" uid="uid://cotu33y5xe5py" path="res://Scripts/States/FSM.gd" id="2_52ee3"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://c5ksibp2qek5u" path="res://Textures/emote__.png" id="8_megsn"]
 [ext_resource type="Script" uid="uid://d01xg8nvkwxj1" path="res://Scripts/Gum/GumShoeAbility.gd" id="9_yoq75"]
 [ext_resource type="Script" uid="uid://dca780cqk67yr" path="res://Scripts/Gum/GumWhipAbility.gd" id="10_ksbbd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksbbd"]
+size = Vector2(5, 5)
 
 [sub_resource type="Animation" id="Animation_bhhdu"]
 resource_name = "Falling"
@@ -137,7 +140,31 @@ airborneState = NodePath("../AirborneState")
 script = ExtResource("7_bhhdu")
 CHEW_COOLDOWN_DURATION = 0.2
 ABILITY_COOLDOWN_DURATION = 0.0
+CHEW_DECAY_SPEED = 0.5
 infinite_chew = true
+
+[node name="WhipAbility" type="Node2D" parent="MovementFSM/GumManager" node_paths=PackedStringArray("ground_state", "whip_line", "whip_hitbox", "whip_collider")]
+script = ExtResource("10_ksbbd")
+ground_state = NodePath("../../GroundState")
+whip_line = NodePath("Line2D")
+whip_hitbox = NodePath("Line2D/WhipEndpoint")
+whip_collider = NodePath("Line2D/WhipEndpoint/CollisionShape2D")
+ability_name = "GUMWHIP"
+
+[node name="Line2D" type="Line2D" parent="MovementFSM/GumManager/WhipAbility"]
+position = Vector2(0, -11)
+width = 2.0
+default_color = Color(1, 0.3372549, 1, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="WhipEndpoint" type="Area2D" parent="MovementFSM/GumManager/WhipAbility/Line2D"]
+collision_layer = 8
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint"]
+shape = SubResource("RectangleShape2D_ksbbd")
 
 [node name="ShoeAbility" type="Node2D" parent="MovementFSM/GumManager" node_paths=PackedStringArray("airborneState", "ceiling_detection", "right_wall_detection", "left_wall_detection")]
 script = ExtResource("9_yoq75")
@@ -149,7 +176,7 @@ ability_name = "GUMSHOE"
 
 [node name="CeilingCast" type="RayCast2D" parent="MovementFSM/GumManager/ShoeAbility"]
 position = Vector2(0, -24)
-target_position = Vector2(0, -15)
+target_position = Vector2(0, -17)
 
 [node name="RightWallCast" type="RayCast2D" parent="MovementFSM/GumManager/ShoeAbility"]
 position = Vector2(18, -11)
@@ -175,10 +202,6 @@ position = Vector2(0, -47)
 scale = Vector2(3, 3)
 texture = ExtResource("8_megsn")
 
-[node name="WhipAbility" type="Node2D" parent="MovementFSM/GumManager"]
-script = ExtResource("10_ksbbd")
-ability_name = "GUMWHIP"
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -32)
@@ -195,3 +218,5 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_o4ney")
+
+[connection signal="area_entered" from="MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint" to="MovementFSM/GumManager/WhipAbility" method="_on_whip_hitbox_area_entered"]
