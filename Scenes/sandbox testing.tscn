@@ -1,77 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://dsyquyced2pt2"]
+[gd_scene load_steps=7 format=4 uid="uid://dsyquyced2pt2"]
 
 [ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="1_e3pal"]
 [ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="2_wsgx1"]
-[ext_resource type="Script" uid="uid://626v82nv4sb5" path="res://Scenes/ow.gd" id="3_8fj36"]
-[ext_resource type="Script" uid="uid://j2yisiipsmav" path="res://Scripts/Gum/WhipSwitch.gd" id="4_4f5pi"]
-[ext_resource type="Texture2D" uid="uid://bcdxclnvnp55w" path="res://Textures/lever_off.png" id="4_43tnx"]
-[ext_resource type="Texture2D" uid="uid://d4cpmbphiupud" path="res://Textures/lever_on.png" id="6_kf3lo"]
-[ext_resource type="Script" uid="uid://c6hwe03ar8c2i" path="res://Scripts/Gum/Switchable.gd" id="7_85f08"]
-[ext_resource type="Texture2D" uid="uid://1swqh8sdq5c4" path="res://Textures/Lightning Trap - Level 2.png" id="7_e3pal"]
+[ext_resource type="Script" uid="uid://626v82nv4sb5" path="res://Scripts/ow.gd" id="3_8fj36"]
+[ext_resource type="PackedScene" uid="uid://bflbdcabbwv3v" path="res://Scenes/lever.tscn" id="5_kf3lo"]
+[ext_resource type="PackedScene" uid="uid://el33dxnm2grc" path="res://Scenes/electric_fence.tscn" id="6_e3pal"]
 [ext_resource type="Script" uid="uid://bwnfpqjexdky5" path="res://Scripts/Debug.gd" id="8_85f08"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f5pi"]
-size = Vector2(29, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_85f08"]
-size = Vector2(30, 96)
-
-[sub_resource type="Animation" id="Animation_8fj36"]
-resource_name = "Active"
-length = 0.80001
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [3, 4, 5, 6, 7, 8, 9, 10]
-}
-
-[sub_resource type="Animation" id="Animation_og6o7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-
-[sub_resource type="Animation" id="Animation_e3pal"]
-resource_name = "Inactive"
-length = 0.40001002
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [3, 2, 1, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihm3o"]
-_data = {
-&"Active": SubResource("Animation_8fj36"),
-&"Inactive": SubResource("Animation_e3pal"),
-&"RESET": SubResource("Animation_og6o7")
-}
 
 [node name="Node2D" type="Node2D"]
 
@@ -119,47 +53,8 @@ theme_override_font_sizes/font_size = 30
 text = "DEBUG TEXT"
 script = ExtResource("8_85f08")
 
-[node name="Lever" type="Area2D" parent="." node_paths=PackedStringArray("switchable", "sprite")]
+[node name="Lever" parent="." instance=ExtResource("5_kf3lo")]
 position = Vector2(-162, -208)
-collision_layer = 16
-collision_mask = 8
-script = ExtResource("4_4f5pi")
-active = true
-switchable = NodePath("../ElectricFence")
-off_sprite = ExtResource("4_43tnx")
-on_sprite = ExtResource("6_kf3lo")
-sprite = NodePath("Sprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="Lever"]
-texture_filter = 1
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_43tnx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lever"]
-position = Vector2(-1.5, 2.5)
-shape = SubResource("RectangleShape2D_4f5pi")
-
-[node name="ElectricFence" type="Area2D" parent="." node_paths=PackedStringArray("collider", "anim_player")]
+[node name="ElectricFence" parent="." instance=ExtResource("6_e3pal")]
 position = Vector2(-317, -240)
-collision_layer = 32
-collision_mask = 2
-script = ExtResource("7_85f08")
-collider = NodePath("CollisionShape2D")
-off_animation = "Inactive"
-on_animation = "Active"
-anim_player = NodePath("Sprite2D/AnimationPlayer")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ElectricFence"]
-shape = SubResource("RectangleShape2D_85f08")
-
-[node name="Sprite2D" type="Sprite2D" parent="ElectricFence"]
-texture = ExtResource("7_e3pal")
-hframes = 12
-frame = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ElectricFence/Sprite2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_ihm3o")
-}
-
-[connection signal="body_entered" from="ElectricFence" to="Player/Label" method="_on_electric_fence_body_entered"]

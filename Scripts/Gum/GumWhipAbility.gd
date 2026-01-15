@@ -39,8 +39,8 @@ func _physics_process(delta):
 	if (whip_active):
 		var weight = (whip_timer / WHIP_SPEED)
 		var whip_point_pos = Vector2.ZERO.lerp(endpoint_vector, weight)
-		whip_line.set_point_position(1, whip_point_pos)
 		whip_hitbox.position = whip_point_pos
+		whip_line.set_point_position(1, whip_point_pos)
 		if (whip_timer >= WHIP_SPEED):
 			end_whip()
 		whip_timer += delta
