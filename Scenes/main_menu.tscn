@@ -1,14 +1,417 @@
-[gd_scene format=3 uid="uid://br8jpwpsilqas"]
+[gd_scene load_steps=6 format=3 uid="uid://n8ltlad2d2wy"]
 
-[node name="Main Menu" type="Control"]
+[ext_resource type="Script" uid="uid://de4f3o1sugfxv" path="res://Scripts/MainMenu.gd" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://cdnp1ly3fypw1" path="res://Textures/icon_checkmark.png" id="2_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhts7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("main_menu_panel", "level_select_panel", "options_panel", "credits_panel", "tutorial_complete_icon", "level1_complete_icon", "level2_complete_icon", "level3_complete_icon", "level4_complete_icon")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ce3w2")
+main_menu_panel = NodePath("Main Panel")
+level_select_panel = NodePath("Level Select")
+options_panel = NodePath("Options")
+credits_panel = NodePath("Credits")
+tutorial_scene = "res://Scenes/tutorial_bare.tscn"
+level1_scene = "res://Scenes/level1.tscn"
+level2_scene = "res://Scenes/level2.tscn"
+level3_scene = "res://Scenes/level3.tscn"
+level4_scene = "res://Scenes/sandbox testing.tscn"
+tutorial_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer/Tutorial/Tutorial_Completed")
+level1_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level1/Level1_Completed")
+level2_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level2/Level2_Completed")
+level3_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level3/Level3_Completed")
+level4_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Level4/Level4_Completed")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Main Panel" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Panel" type="Panel" parent="Main Panel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Panel/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Level Select" type="Button" parent="Main Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Level Select"
+
+[node name="Panel" type="Panel" parent="Main Panel/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rhts7")
+
+[node name="Options" type="Button" parent="Main Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Options"
+
+[node name="Credits" type="Button" parent="Main Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Credits"
+
+[node name="Exit Game" type="Button" parent="Main Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 70
+text = "Exit Game"
+
+[node name="Level Select" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="Panel" parent="Level Select"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Level Select/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Level Select/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Level Select/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Tutorial" type="Button" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Tutorial"
+
+[node name="Tutorial_Completed" type="TextureRect" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer/Tutorial"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Panel4" type="Panel" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rhts7")
+
+[node name="LevelSelectBTM" type="Button" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "Back to Menu"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Level Select/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Level1" type="Button" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 1"
+
+[node name="Level1_Completed" type="TextureRect" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Level2" type="Button" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 2"
+
+[node name="Level2_Completed" type="TextureRect" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Level3" type="Button" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 3"
+
+[node name="Level3_Completed" type="TextureRect" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Level Select/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Level4" type="Button" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Level 4"
+
+[node name="Level4_Completed" type="TextureRect" parent="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Level4"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -25.0
+offset_right = -25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_48xlc")
+
+[node name="Credits" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_06t4h")
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Credit" type="Label" parent="Credits/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Created By"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Names" type="Label" parent="Credits/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Leo Grandinetti & Max Speil"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsBTM" type="Button" parent="Credits/MarginContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "Back to Menu"
+
+[node name="Options" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_06t4h")
+
+[node name="MarginContainer" type="MarginContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="Options/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Option" type="Label" parent="Options/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "¯\\_(ツ)_/¯"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsBTM" type="Button" parent="Options/MarginContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "Back to Menu"
+
+[connection signal="pressed" from="Main Panel/Panel/MarginContainer/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="Main Panel/Panel/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Main Panel/Panel/MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Main Panel/Panel/MarginContainer/VBoxContainer/Exit Game" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer/LevelSelectBTM" to="." method="_on_level_select_btm_pressed"]
+[connection signal="pressed" from="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Credits/MarginContainer/CreditsBTM" to="." method="_on_credits_btm_pressed"]
+[connection signal="pressed" from="Options/MarginContainer/OptionsBTM" to="." method="_on_options_btm_pressed"]
