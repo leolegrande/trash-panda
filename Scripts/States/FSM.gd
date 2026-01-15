@@ -3,7 +3,7 @@ extends Node
 class_name FSM
 
 @export var mc : MovementController
-@export var animPlayer : AnimationPlayer
+@export var animPlayer : AnimatedSprite2D
 @export var starting_state : State
 var current_state : State
 
