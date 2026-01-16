@@ -14,8 +14,11 @@ var chew_cooldown : float
 var ability_cooldown : float
 var using_ability : bool
 @export var infinite_chew : bool = false
+@export var has_ability : bool = true
 
 func _ready():
+	if (!has_ability):
+		return
 	chew_value = 0
 	ability_list = []
 	using_ability = false
@@ -26,6 +29,8 @@ func _ready():
 	set_ability(0)
 
 func _process(delta):
+	if (!has_ability):
+		return
 	handle_cooldown(delta)
 	if (!using_ability):
 		handle_input()
