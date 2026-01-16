@@ -5,6 +5,7 @@ class_name CameraScript
 
 func _ready():
 	make_current()
+	limit_enabled = true
 
 func on_room_entered(newCamBounds : Camera2D):
 	zoom = newCamBounds.zoom
