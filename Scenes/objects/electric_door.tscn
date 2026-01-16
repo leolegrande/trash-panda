@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu24dg1k47ghd"]
+
+[ext_resource type="Script" uid="uid://bb0l2c12cuqxt" path="res://Scripts/ElectricDoor.gd" id="1_6036y"]
+[ext_resource type="Texture2D" uid="uid://qulg5p5slvu" path="res://Textures/doors_closed.png" id="2_w8qyp"]
+[ext_resource type="Texture2D" uid="uid://cfmaowxlpd3vo" path="res://Textures/doors_open.png" id="3_w8qyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqmb2"]
+size = Vector2(144, 16)
+
+[node name="ElectricDoor" type="Node2D" node_paths=PackedStringArray("collider", "sprite")]
+script = ExtResource("1_6036y")
+collider = NodePath("StaticBody2D/CollisionShape2D")
+closed_texture = ExtResource("2_w8qyp")
+open_texture = ExtResource("3_w8qyp")
+sprite = NodePath("Sprite2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_qqmb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_w8qyp")
