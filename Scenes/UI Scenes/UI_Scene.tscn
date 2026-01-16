@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6pbse5p4p00g"]
 
-[ext_resource type="Script" uid="uid://bwnfpqjexdky5" path="res://Scripts/Debug.gd" id="1_22g2l"]
-[ext_resource type="Script" uid="uid://duf2yjxnqvq33" path="res://Scripts/GameUI.gd" id="1_httrr"]
+[ext_resource type="Script" uid="uid://bwnfpqjexdky5" path="res://Scripts/UI Scripts/Debug.gd" id="1_22g2l"]
+[ext_resource type="Script" uid="uid://duf2yjxnqvq33" path="res://Scripts/UI Scripts/GameUI.gd" id="1_httrr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1avqd"]
 

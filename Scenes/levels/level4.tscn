@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2dxof0h0p6p" path="res://Textures/Beetle.png" id="4_81lxm"]
 [ext_resource type="Texture2D" uid="uid://2u7yf2gauf5f" path="res://Textures/Large Pickup van.png" id="5_evoni"]
 [ext_resource type="Texture2D" uid="uid://dm7igmdkq4sgd" path="res://Textures/Caravan.png" id="6_fsrl6"]
-[ext_resource type="Script" uid="uid://c6hwe03ar8c2i" path="res://Scripts/Gum/Switchable.gd" id="7_q5xce"]
+[ext_resource type="Script" uid="uid://c6hwe03ar8c2i" path="res://Scripts/Switchable.gd" id="7_q5xce"]
 [ext_resource type="Texture2D" uid="uid://bhkoebow58f3f" path="res://Textures/1.png" id="8_ywl3f"]
 [ext_resource type="Texture2D" uid="uid://cosddyveuq1gd" path="res://Textures/2.png" id="9_s1odp"]
 [ext_resource type="Texture2D" uid="uid://db1y7tstrdkga" path="res://Textures/3.png" id="10_vu37y"]

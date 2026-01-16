@@ -130,6 +130,8 @@ Pause={
 2d_physics/layer_4="Whip"
 2d_physics/layer_5="Whippable"
 2d_physics/layer_6="Death"
+2d_physics/layer_7="ElectricFence"
+2d_physics/layer_8="MovingPlatforms"
 
 [physics]
 

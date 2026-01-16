@@ -1,15 +1,15 @@
 [gd_scene load_steps=126 format=4 uid="uid://lebkr6vbf1bl"]
 
 [ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="1_n6lty"]
-[ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/LevelManager.gd" id="1_o1sn7"]
+[ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_o1sn7"]
 [ext_resource type="Texture2D" uid="uid://dtkeed4hoaqu8" path="res://Textures/tilemap.png" id="2_arpkj"]
 [ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="3_4cpn2"]
 [ext_resource type="Script" uid="uid://cotu33y5xe5py" path="res://Scripts/States/FSM.gd" id="4_uvrfj"]
 [ext_resource type="Script" uid="uid://cnvl733u4i34b" path="res://Scripts/States/GroundState.gd" id="5_2n5ow"]
 [ext_resource type="Script" uid="uid://doauy1wr14ugf" path="res://Scripts/States/AirborneState.gd" id="6_253k7"]
 [ext_resource type="Script" uid="uid://btahc4ldeix6e" path="res://Scripts/States/JumpState.gd" id="7_rsoyx"]
-[ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum/GumManager.gd" id="8_822kj"]
-[ext_resource type="Script" uid="uid://d01xg8nvkwxj1" path="res://Scripts/Gum/GumShoeAbility.gd" id="9_ldeby"]
+[ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum Abilities/GumManager.gd" id="8_822kj"]
+[ext_resource type="Script" uid="uid://d01xg8nvkwxj1" path="res://Scripts/Gum Abilities/GumShoeAbility.gd" id="9_ldeby"]
 [ext_resource type="Texture2D" uid="uid://ccnxkubfs5jyx" path="res://Textures/raccoon_fall_strip5.png" id="10_5e3ap"]
 [ext_resource type="Texture2D" uid="uid://dstbtht5ee7xx" path="res://Textures/raccoon_fright_strip4.png" id="11_bgby5"]
 [ext_resource type="Texture2D" uid="uid://bfv7t2ekj1ttt" path="res://Textures/raccoon_run_gum.png" id="12_f7o3i"]
@@ -20,18 +20,18 @@
 [ext_resource type="Texture2D" uid="uid://b1w1a5x7kq15b" path="res://Textures/raccoon_wallgrab_strip8.png" id="17_0pyt1"]
 [ext_resource type="Texture2D" uid="uid://br7ocbewslbs1" path="res://Textures/raccoon_attack_strip7.png" id="18_tlxex"]
 [ext_resource type="Texture2D" uid="uid://g4a1j11um7jb" path="res://Textures/raccoon_whip_v1.png" id="19_cshjs"]
-[ext_resource type="PackedScene" uid="uid://b6pbse5p4p00g" path="res://Scenes/UI_Scene.tscn" id="20_vhtgj"]
-[ext_resource type="PackedScene" uid="uid://ddcvkt44pqo02" path="res://Scenes/level_complete_screen.tscn" id="21_w4lnf"]
-[ext_resource type="Script" uid="uid://chhkxtjcx8y5x" path="res://Scripts/level_complete_trigger.gd" id="22_ttvup"]
+[ext_resource type="PackedScene" uid="uid://b6pbse5p4p00g" path="res://Scenes/UI Scenes/UI_Scene.tscn" id="20_vhtgj"]
+[ext_resource type="PackedScene" uid="uid://ddcvkt44pqo02" path="res://Scenes/UI Scenes/level_complete_screen.tscn" id="21_w4lnf"]
+[ext_resource type="Script" uid="uid://chhkxtjcx8y5x" path="res://Scripts/Level Scripts/level_complete_trigger.gd" id="22_ttvup"]
 [ext_resource type="Texture2D" uid="uid://bvqlelk4go0sl" path="res://Textures/lizard1.png" id="23_rsoyx"]
 [ext_resource type="Texture2D" uid="uid://dauvhj4txoim6" path="res://Textures/lizard2.png" id="24_822kj"]
 [ext_resource type="Texture2D" uid="uid://d4hkckdmlgs4m" path="res://Textures/lizard3.png" id="25_ldeby"]
 [ext_resource type="Texture2D" uid="uid://cku5243tj6elj" path="res://Textures/lizard4.png" id="26_5e3ap"]
 [ext_resource type="Texture2D" uid="uid://m0ulnfsn4pjm" path="res://Textures/lizard5.png" id="27_bgby5"]
-[ext_resource type="Script" uid="uid://eu0t6knb08yx" path="res://Scripts/CameraScript.gd" id="27_u1na6"]
+[ext_resource type="Script" uid="uid://eu0t6knb08yx" path="res://Scripts/Level Scripts/CameraScript.gd" id="27_u1na6"]
 [ext_resource type="Texture2D" uid="uid://d1cyrcwggl0cw" path="res://Textures/lizard6.png" id="28_f7o3i"]
-[ext_resource type="Script" uid="uid://cul0dyjffi5i3" path="res://Scripts/CameraTransition.gd" id="29_yjaoa"]
-[ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/DeathBound.gd" id="32_se7y5"]
+[ext_resource type="Script" uid="uid://cul0dyjffi5i3" path="res://Scripts/Level Scripts/CameraTransition.gd" id="29_yjaoa"]
+[ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/Level Scripts/DeathBound.gd" id="32_se7y5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqk3y"]
 texture = ExtResource("2_arpkj")
@@ -63,7 +63,6 @@ separation = Vector2i(1, 1)
 24:0/0 = 0
 25:0/0 = 0
 26:0/0 = 0
-27:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
@@ -91,7 +90,6 @@ separation = Vector2i(1, 1)
 24:1/0 = 0
 25:1/0 = 0
 26:1/0 = 0
-27:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -119,7 +117,6 @@ separation = Vector2i(1, 1)
 24:2/0 = 0
 25:2/0 = 0
 26:2/0 = 0
-27:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -147,7 +144,6 @@ separation = Vector2i(1, 1)
 24:3/0 = 0
 25:3/0 = 0
 26:3/0 = 0
-27:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -175,7 +171,6 @@ separation = Vector2i(1, 1)
 24:4/0 = 0
 25:4/0 = 0
 26:4/0 = 0
-27:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -203,7 +198,6 @@ separation = Vector2i(1, 1)
 24:5/0 = 0
 25:5/0 = 0
 26:5/0 = 0
-27:5/0 = 0
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -231,7 +225,6 @@ separation = Vector2i(1, 1)
 24:6/0 = 0
 25:6/0 = 0
 26:6/0 = 0
-27:6/0 = 0
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -259,7 +252,6 @@ separation = Vector2i(1, 1)
 24:7/0 = 0
 25:7/0 = 0
 26:7/0 = 0
-27:7/0 = 0
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
@@ -287,7 +279,6 @@ separation = Vector2i(1, 1)
 24:8/0 = 0
 25:8/0 = 0
 26:8/0 = 0
-27:8/0 = 0
 0:9/0 = 0
 1:9/0 = 0
 2:9/0 = 0
@@ -315,7 +306,6 @@ separation = Vector2i(1, 1)
 24:9/0 = 0
 25:9/0 = 0
 26:9/0 = 0
-27:9/0 = 0
 0:10/0 = 0
 1:10/0 = 0
 2:10/0 = 0
@@ -343,7 +333,6 @@ separation = Vector2i(1, 1)
 24:10/0 = 0
 25:10/0 = 0
 26:10/0 = 0
-27:10/0 = 0
 0:11/0 = 0
 1:11/0 = 0
 2:11/0 = 0
@@ -371,7 +360,6 @@ separation = Vector2i(1, 1)
 24:11/0 = 0
 25:11/0 = 0
 26:11/0 = 0
-27:11/0 = 0
 0:12/0 = 0
 1:12/0 = 0
 2:12/0 = 0
@@ -399,7 +387,6 @@ separation = Vector2i(1, 1)
 24:12/0 = 0
 25:12/0 = 0
 26:12/0 = 0
-27:12/0 = 0
 0:13/0 = 0
 1:13/0 = 0
 2:13/0 = 0
@@ -427,7 +414,6 @@ separation = Vector2i(1, 1)
 24:13/0 = 0
 25:13/0 = 0
 26:13/0 = 0
-27:13/0 = 0
 0:14/0 = 0
 1:14/0 = 0
 2:14/0 = 0
@@ -455,7 +441,6 @@ separation = Vector2i(1, 1)
 24:14/0 = 0
 25:14/0 = 0
 26:14/0 = 0
-27:14/0 = 0
 0:15/0 = 0
 1:15/0 = 0
 2:15/0 = 0
@@ -483,7 +468,6 @@ separation = Vector2i(1, 1)
 24:15/0 = 0
 25:15/0 = 0
 26:15/0 = 0
-27:15/0 = 0
 0:16/0 = 0
 1:16/0 = 0
 2:16/0 = 0
@@ -511,7 +495,6 @@ separation = Vector2i(1, 1)
 24:16/0 = 0
 25:16/0 = 0
 26:16/0 = 0
-27:16/0 = 0
 0:17/0 = 0
 1:17/0 = 0
 2:17/0 = 0
@@ -539,38 +522,6 @@ separation = Vector2i(1, 1)
 24:17/0 = 0
 25:17/0 = 0
 26:17/0 = 0
-27:17/0 = 0
-0:18/0 = 0
-1:18/0 = 0
-2:18/0 = 0
-3:18/0 = 0
-4:18/0 = 0
-5:18/0 = 0
-6:18/0 = 0
-7:18/0 = 0
-8:18/0 = 0
-9:18/0 = 0
-10:18/0 = 0
-11:18/0 = 0
-12:18/0 = 0
-13:18/0 = 0
-14:18/0 = 0
-15:18/0 = 0
-16:18/0 = 0
-17:18/0 = 0
-18:18/0 = 0
-19:18/0 = 0
-20:18/0 = 0
-21:18/0 = 0
-22:18/0 = 0
-23:18/0 = 0
-24:18/0 = 0
-25:18/0 = 0
-26:18/0 = 0
-27:18/0 = 0
-0:173/0 = 0
-1:172/0 = 0
-210:237/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_6p07m"]
 sources/0 = SubResource("TileSetAtlasSource_oqk3y")
