@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ok752k3853if"]
+
+[ext_resource type="Script" uid="uid://dp37n40q82nde" path="res://Scripts/MovingPlatform.gd" id="1_0kdc7"]
+[ext_resource type="Texture2D" uid="uid://ca7pen3pcw4wl" path="res://Textures/platform.png" id="1_5v8mt"]
+
+[sub_resource type="Curve2D" id="Curve2D_5v8mt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, -200, 0, 0, 0, 0, 0, 0, 0, -200, 0, -200, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q06lf"]
+size = Vector2(96, 27)
+
+[node name="Moving_Platform" type="Node2D" node_paths=PackedStringArray("path_follow")]
+script = ExtResource("1_0kdc7")
+path_follow = NodePath("Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5v8mt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotates = false
+
+[node name="moving_platform" type="AnimatableBody2D" parent="Path2D/PathFollow2D"]
+collision_mask = 2
+sync_to_physics = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/moving_platform"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5v8mt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/moving_platform"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_q06lf")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddcvkt44pqo02"]
 
-[ext_resource type="Script" uid="uid://dg7kkcbgsom82" path="res://Scripts/level_complete_screen.gd" id="1_rgl0m"]
+[ext_resource type="Script" uid="uid://dg7kkcbgsom82" path="res://Scripts/Level Scripts/level_complete_screen.gd" id="1_rgl0m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgl0m"]
 content_margin_left = 0.0

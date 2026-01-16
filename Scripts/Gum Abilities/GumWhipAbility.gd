@@ -55,11 +55,6 @@ func end_whip():
 	activate_hitbox(false)
 	gm.using_ability = false
 
-func _on_whip_hitbox_area_entered(area):
-	print("whip hit something!")
-	if area is WhipSwitch:
-		area.toggle()
-	end_whip()
 
 func exit():
 	return
@@ -89,3 +84,15 @@ func get_gum_power() -> float:
 		return 2
 	gm.chew_value -= 1
 	return 1
+
+func _on_whip_hitbox_area_entered(area):
+	print("whip hit something!")
+	if area is WhipSwitch:
+		area.toggle()
+	end_whip()
+
+func _on_whip_endpoint_body_entered(body: Node2D):
+	print("whip hit something!")
+	if body is WhipSwitch:
+		body.toggle()
+	end_whip()

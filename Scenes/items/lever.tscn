@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bflbdcabbwv3v"]
 
-[ext_resource type="Script" uid="uid://j2yisiipsmav" path="res://Scripts/Gum/WhipSwitch.gd" id="1_fhlr4"]
+[ext_resource type="Script" uid="uid://j2yisiipsmav" path="res://Scripts/WhipSwitch.gd" id="1_fhlr4"]
 [ext_resource type="Texture2D" uid="uid://bcdxclnvnp55w" path="res://Textures/lever_off.png" id="2_jjeqf"]
 [ext_resource type="Texture2D" uid="uid://d4cpmbphiupud" path="res://Textures/lever_on.png" id="3_31g2e"]
 

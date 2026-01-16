@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://cnvl733u4i34b" path="res://Scripts/States/GroundState.gd" id="3_bhhdu"]
 [ext_resource type="Script" uid="uid://doauy1wr14ugf" path="res://Scripts/States/AirborneState.gd" id="4_megsn"]
 [ext_resource type="Script" uid="uid://btahc4ldeix6e" path="res://Scripts/States/JumpState.gd" id="5_yoq75"]
-[ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum/GumManager.gd" id="7_bhhdu"]
-[ext_resource type="Script" uid="uid://cnji10wlbrn2q" path="res://Scripts/Gum/BalloonAbility.gd" id="8_bhhdu"]
+[ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum Abilities/GumManager.gd" id="7_bhhdu"]
+[ext_resource type="Script" uid="uid://cnji10wlbrn2q" path="res://Scripts/Gum Abilities/BalloonAbility.gd" id="8_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://c5ksibp2qek5u" path="res://Textures/emote__.png" id="8_megsn"]
-[ext_resource type="Script" uid="uid://d01xg8nvkwxj1" path="res://Scripts/Gum/GumShoeAbility.gd" id="9_yoq75"]
-[ext_resource type="Script" uid="uid://dca780cqk67yr" path="res://Scripts/Gum/GumWhipAbility.gd" id="10_ksbbd"]
+[ext_resource type="Script" uid="uid://d01xg8nvkwxj1" path="res://Scripts/Gum Abilities/GumShoeAbility.gd" id="9_yoq75"]
+[ext_resource type="Script" uid="uid://dca780cqk67yr" path="res://Scripts/Gum Abilities/GumWhipAbility.gd" id="10_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://ccnxkubfs5jyx" path="res://Textures/raccoon_fall_strip5.png" id="11_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://bn1e3syhys2qs" path="res://Textures/raccoon_idle_blink_strip8.png" id="11_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://dstbtht5ee7xx" path="res://Textures/raccoon_fright_strip4.png" id="12_1e7my"]
@@ -614,7 +614,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite") groups=["Player"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 101
 script = ExtResource("1_nn08x")
 player_sprite = NodePath("AnimatedSprite2D")
 
@@ -714,3 +714,4 @@ animation = &"idle"
 frame_progress = 0.6066953
 
 [connection signal="area_entered" from="MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint" to="MovementFSM/GumManager/WhipAbility" method="_on_whip_hitbox_area_entered"]
+[connection signal="body_entered" from="MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint" to="MovementFSM/GumManager/WhipAbility" method="_on_whip_endpoint_body_entered"]
