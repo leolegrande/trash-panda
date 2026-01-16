@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:Scenes/level0_leo.tscn
 [gd_scene load_steps=110 format=4 uid="uid://bq7xkwmwtaoh1"]
 
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/LevelManager.gd" id="1_emlq5"]
@@ -25,22 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://ddcvkt44pqo02" path="res://Scenes/level_complete_screen.tscn" id="22_c5h7w"]
 [ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/DeathBound.gd" id="23_4t2xx"]
 [ext_resource type="Script" uid="uid://chhkxtjcx8y5x" path="res://Scripts/level_complete_trigger.gd" id="24_gxn3l"]
-========
-[gd_scene load_steps=20 format=4 uid="uid://btpboni71lkj5"]
-
-[ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/LevelManager.gd" id="1_y1v25"]
-[ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="2_04at2"]
-[ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/DeathBound.gd" id="3_xj12p"]
-[ext_resource type="Script" uid="uid://cul0dyjffi5i3" path="res://Scripts/CameraTransition.gd" id="4_rkggs"]
-[ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="5_d0iiw"]
-[ext_resource type="Script" uid="uid://eu0t6knb08yx" path="res://Scripts/CameraScript.gd" id="6_h1y7v"]
-[ext_resource type="PackedScene" uid="uid://b6pbse5p4p00g" path="res://Scenes/UI_Scene.tscn" id="7_rmc7q"]
-[ext_resource type="Texture2D" uid="uid://cwtcf7nlcoecn" path="res://Textures/1_edit.png" id="9_rkggs"]
-[ext_resource type="Texture2D" uid="uid://dtkeed4hoaqu8" path="res://Textures/tilemap.png" id="9_veawu"]
-[ext_resource type="Texture2D" uid="uid://fyan0kp2mjyx" path="res://Textures/2_edit.png" id="10_d0iiw"]
-[ext_resource type="Texture2D" uid="uid://b8vnbg2phsye6" path="res://Textures/3_edit.png" id="11_h1y7v"]
-[ext_resource type="Texture2D" uid="uid://3fmo45demym7" path="res://Textures/4_edit.png" id="12_rmc7q"]
->>>>>>>> max-branch:Scenes/level0_max.tscn
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ney"]
 size = Vector2(34, 24)
@@ -855,7 +838,6 @@ tile_set = ExtResource("20_ujkap")
 visible = false
 complete_text = "Tutorial Complete!"
 
-<<<<<<<< HEAD:Scenes/level0_leo.tscn
 [node name="Death Bounds" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 2
@@ -884,60 +866,5 @@ shape = SubResource("RectangleShape2D_xj12p")
 [connection signal="body_entered" from="Room Cameras/Second Room" to="Room Cameras/Second Room" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/Third Room" to="Room Cameras/Third Room" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/Fourth Room" to="Room Cameras/Fourth Room" method="_on_body_entered"]
-========
-[node name="Parallax2D" type="Parallax2D" parent="."]
-z_index = -1
-texture_filter = 1
-scale = Vector2(4.089964, 4.089963)
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-551.1442, -245.21307)
-repeat_size = Vector2(160, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-z_index = -1
-texture_filter = 1
-texture = ExtResource("9_rkggs")
-centered = false
-
-[node name="Parallax2D2" type="Parallax2D" parent="."]
-z_index = -1
-scale = Vector2(4.089964, 4.089963)
-scroll_scale = Vector2(0.3, 0.3)
-scroll_offset = Vector2(-551.1442, -245.21307)
-repeat_size = Vector2(160, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
-z_index = -1
-texture_filter = 1
-texture = ExtResource("10_d0iiw")
-centered = false
-
-[node name="Parallax2D3" type="Parallax2D" parent="."]
-z_index = -1
-scale = Vector2(4.089964, 4.089963)
-scroll_scale = Vector2(0.4, 0.4)
-scroll_offset = Vector2(-551.1442, -245.21307)
-repeat_size = Vector2(160, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
-z_index = -1
-texture_filter = 1
-texture = ExtResource("11_h1y7v")
-centered = false
-
-[node name="Parallax2D4" type="Parallax2D" parent="."]
-z_index = -1
-scale = Vector2(4.089964, 4.089963)
-scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-551.1442, -245.21307)
-repeat_size = Vector2(160, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
-z_index = -1
-texture_filter = 1
-texture = ExtResource("12_rmc7q")
-centered = false
-
->>>>>>>> max-branch:Scenes/level0_max.tscn
 [connection signal="body_entered" from="Death Bounds" to="." method="_on_death_bounds_body_entered"]
 [connection signal="body_entered" from="Level_Complete_Trigger" to="Level_Complete_Trigger" method="_on_body_entered"]
