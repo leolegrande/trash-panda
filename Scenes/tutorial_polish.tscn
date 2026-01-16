@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="1_2oor5"]
 [ext_resource type="TileSet" uid="uid://bdh5jhsr3ukau" path="res://Tiles/treeshit.tres" id="2_3y105"]
-[ext_resource type="Texture2D" uid="uid://usjdcvs6da0f" path="res://Textures/tilemap.png" id="3_iknse"]
+[ext_resource type="Texture2D" uid="uid://dtkeed4hoaqu8" path="res://Textures/tilemap.png" id="3_iknse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgfgy"]
 texture = ExtResource("3_iknse")

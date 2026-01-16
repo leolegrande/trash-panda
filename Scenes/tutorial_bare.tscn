@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=4 uid="uid://btpboni71lkj5"]
+[gd_scene load_steps=20 format=4 uid="uid://btpboni71lkj5"]
 
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/LevelManager.gd" id="1_y1v25"]
 [ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="2_04at2"]
@@ -12,113 +12,11 @@
 [ext_resource type="Script" uid="uid://eu0t6knb08yx" path="res://Scripts/CameraScript.gd" id="6_h1y7v"]
 [ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum/GumManager.gd" id="7_jyauq"]
 [ext_resource type="PackedScene" uid="uid://b6pbse5p4p00g" path="res://Scenes/UI_Scene.tscn" id="7_rmc7q"]
-[ext_resource type="PackedScene" uid="uid://ddcvkt44pqo02" path="res://Scenes/level_complete_screen.tscn" id="7_y1v25"]
-[ext_resource type="Texture2D" uid="uid://ccnxkubfs5jyx" path="res://Textures/raccoon_fall_strip5.png" id="8_ysn6q"]
-[ext_resource type="Script" uid="uid://chhkxtjcx8y5x" path="res://Scenes/level_complete_trigger.gd" id="9_04at2"]
-[ext_resource type="Texture2D" uid="uid://dstbtht5ee7xx" path="res://Textures/raccoon_fright_strip4.png" id="9_pslo0"]
-[ext_resource type="Texture2D" uid="uid://bfv7t2ekj1ttt" path="res://Textures/raccoon_run_gum.png" id="10_hxd7x"]
-[ext_resource type="Texture2D" uid="uid://bn1e3syhys2qs" path="res://Textures/raccoon_idle_blink_strip8.png" id="11_8sfx0"]
-[ext_resource type="Texture2D" uid="uid://jfwqfq4fqwf1" path="res://Textures/raccoon_jump_strip14.png" id="12_eyp03"]
-[ext_resource type="Texture2D" uid="uid://dwbhqu5t4jj3h" path="res://Textures/raccoon_land_strip3.png" id="13_stl2d"]
-[ext_resource type="Texture2D" uid="uid://c01o5u271d5uy" path="res://Textures/raccoon_run_strip8.png" id="14_vdlmf"]
-[ext_resource type="Texture2D" uid="uid://b1w1a5x7kq15b" path="res://Textures/raccoon_wallgrab_strip8.png" id="15_il5kt"]
-[ext_resource type="Texture2D" uid="uid://br7ocbewslbs1" path="res://Textures/raccoon_attack_strip7.png" id="16_c6e73"]
-[ext_resource type="Texture2D" uid="uid://g4a1j11um7jb" path="res://Textures/raccoon_whip_v1.png" id="17_qx7vr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ney"]
-size = Vector2(34, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_01r87"]
-atlas = ExtResource("8_ysn6q")
-region = Rect2(0, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhxql"]
-atlas = ExtResource("8_ysn6q")
-region = Rect2(60, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ilb4b"]
-atlas = ExtResource("8_ysn6q")
-region = Rect2(120, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tlew5"]
-atlas = ExtResource("8_ysn6q")
-region = Rect2(180, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h55a1"]
-atlas = ExtResource("8_ysn6q")
-region = Rect2(240, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yf17c"]
-atlas = ExtResource("9_pslo0")
-region = Rect2(0, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_awd2i"]
-atlas = ExtResource("9_pslo0")
-region = Rect2(60, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o2sks"]
-atlas = ExtResource("9_pslo0")
-region = Rect2(120, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rw25"]
-atlas = ExtResource("9_pslo0")
-region = Rect2(180, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u4y2r"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(0, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbv6f"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(60, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vp15a"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(120, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fayk8"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(180, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddly5"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(240, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_omi2y"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(300, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_75iyv"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(360, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yrofn"]
-atlas = ExtResource("10_hxd7x")
-region = Rect2(420, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7x0b"]
-atlas = ExtResource("11_8sfx0")
-region = Rect2(0, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_utwlt"]
-atlas = ExtResource("11_8sfx0")
-region = Rect2(60, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kih0c"]
-atlas = ExtResource("11_8sfx0")
-region = Rect2(120, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lyrkg"]
-atlas = ExtResource("11_8sfx0")
-region = Rect2(180, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c43xd"]
-atlas = ExtResource("11_8sfx0")
-region = Rect2(240, 0, 60, 60)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_avx33"]
-atlas = ExtResource("11_8sfx0")
-region = Rect2(300, 0, 60, 60)
+[ext_resource type="Texture2D" uid="uid://cwtcf7nlcoecn" path="res://Textures/1_edit.png" id="9_rkggs"]
+[ext_resource type="Texture2D" uid="uid://dtkeed4hoaqu8" path="res://Textures/tilemap.png" id="9_veawu"]
+[ext_resource type="Texture2D" uid="uid://fyan0kp2mjyx" path="res://Textures/2_edit.png" id="10_d0iiw"]
+[ext_resource type="Texture2D" uid="uid://b8vnbg2phsye6" path="res://Textures/3_edit.png" id="11_h1y7v"]
+[ext_resource type="Texture2D" uid="uid://3fmo45demym7" path="res://Textures/4_edit.png" id="12_rmc7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxg2u"]
 atlas = ExtResource("11_8sfx0")
@@ -862,9 +760,58 @@ complete_screen = NodePath("../UI Canvas/Level_Complete_Screen")
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_xj12p")
 
-[connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
-[connection signal="body_entered" from="Room Cameras/Second Room" to="Room Cameras/Second Room" method="_on_body_entered"]
-[connection signal="body_entered" from="Room Cameras/Third Room" to="Room Cameras/Third Room" method="_on_body_entered"]
-[connection signal="body_entered" from="Room Cameras/Fourth Room" to="Room Cameras/Fourth Room" method="_on_body_entered"]
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -1
+texture_filter = 1
+scale = Vector2(4.089964, 4.089963)
+scroll_scale = Vector2(0.2, 0.2)
+scroll_offset = Vector2(-551.1442, -245.21307)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("9_rkggs")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+z_index = -1
+scale = Vector2(4.089964, 4.089963)
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(-551.1442, -245.21307)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("10_d0iiw")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+z_index = -1
+scale = Vector2(4.089964, 4.089963)
+scroll_scale = Vector2(0.4, 0.4)
+scroll_offset = Vector2(-551.1442, -245.21307)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("11_h1y7v")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+z_index = -1
+scale = Vector2(4.089964, 4.089963)
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-551.1442, -245.21307)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("12_rmc7q")
+centered = false
+
 [connection signal="body_entered" from="Death Bounds" to="." method="_on_death_bounds_body_entered"]
 [connection signal="body_entered" from="Level_Complete_Trigger" to="Level_Complete_Trigger" method="_on_body_entered"]
