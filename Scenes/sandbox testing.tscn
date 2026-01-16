@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=4 uid="uid://dsyquyced2pt2"]
+[gd_scene load_steps=12 format=4 uid="uid://dsyquyced2pt2"]
 
 [ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="1_bbk6i"]
 [ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="2_51jgu"]
 [ext_resource type="Script" uid="uid://626v82nv4sb5" path="res://Scripts/ow.gd" id="3_be2qp"]
 [ext_resource type="Script" uid="uid://bwnfpqjexdky5" path="res://Scripts/UI Scripts/Debug.gd" id="4_rn6w6"]
-[ext_resource type="PackedScene" uid="uid://bflbdcabbwv3v" path="res://Scenes/items/lever.tscn" id="5_be2qp"]
-[ext_resource type="PackedScene" uid="uid://el33dxnm2grc" path="res://Scenes/items/electric_fence.tscn" id="6_rn6w6"]
+[ext_resource type="PackedScene" uid="uid://bflbdcabbwv3v" path="res://Scenes/objects/lever.tscn" id="5_be2qp"]
+[ext_resource type="PackedScene" uid="uid://el33dxnm2grc" path="res://Scenes/objects/electric_fence.tscn" id="6_rn6w6"]
 [ext_resource type="Script" uid="uid://dp37n40q82nde" path="res://Scripts/MovingPlatform.gd" id="7_stl7o"]
 [ext_resource type="Texture2D" uid="uid://ca7pen3pcw4wl" path="res://Textures/platform.png" id="8_eenfp"]
+[ext_resource type="PackedScene" uid="uid://cu24dg1k47ghd" path="res://Scenes/objects/electric_door.tscn" id="9_eenfp"]
 
 [sub_resource type="Curve2D" id="Curve2D_5v8mt"]
 _data = {
@@ -96,6 +97,15 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_q06lf")
 
 [node name="Lever2" parent="." node_paths=PackedStringArray("switchable") instance=ExtResource("5_be2qp")]
-position = Vector2(-116, -208)
+position = Vector2(-117, -208)
 active = false
 switchable = NodePath("../Moving_Platform")
+
+[node name="ElectricDoor" parent="." instance=ExtResource("9_eenfp")]
+position = Vector2(232, -264)
+rotation = 1.5707964
+
+[node name="Lever3" parent="." node_paths=PackedStringArray("switchable") instance=ExtResource("5_be2qp")]
+position = Vector2(160, -208)
+active = false
+switchable = NodePath("../ElectricDoor")

@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://7jxdf74vwrud" path="res://Textures/Background2_exp.png" id="18_iihm0"]
 [ext_resource type="Texture2D" uid="uid://1i4e4ylyyyva" path="res://Textures/Background3_exp.png" id="19_0jb0a"]
 [ext_resource type="Texture2D" uid="uid://cg8s1a3srcsea" path="res://Textures/Background4_exp.png" id="20_wn2go"]
-[ext_resource type="PackedScene" uid="uid://bflbdcabbwv3v" path="res://Scenes/items/lever.tscn" id="21_mwl31"]
+[ext_resource type="PackedScene" uid="uid://bflbdcabbwv3v" path="res://Scenes/objects/lever.tscn" id="21_mwl31"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2k2h5"]
 atlas = ExtResource("2_n4fv4")
