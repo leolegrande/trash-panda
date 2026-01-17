@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2o6jllagsmrb"
+path="res://.godot/imported/jump.ogg-e44fff8c57fa4a74b0430d9567f2ee61.oggvorbisstr"
+
+[deps]
+
+source_file="res://Textures/Sound Effects/jump.ogg"
+dest_files=["res://.godot/imported/jump.ogg-e44fff8c57fa4a74b0430d9567f2ee61.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

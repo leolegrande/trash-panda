@@ -14,6 +14,7 @@ var start_on_level_select : bool = false
 
 func pause_game(is_paused : bool):
 	game_paused = is_paused
+	print("game paused: %s" % game_paused)
 
 func change_scene(new_scene : String):
 	call_deferred("deferred_change_scene", new_scene)

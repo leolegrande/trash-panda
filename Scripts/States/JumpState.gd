@@ -4,10 +4,12 @@ class_name JumpState
 
 @export var groundState : State
 @export var airborneState : State
+@export var jump_sfx : AudioStream
 
 func enter():
 	mc.jump()
 	animPlayer.play("jump")
+	parent.play_audio(jump_sfx)
 
 func process_physics(delta : float):
 	mc.get_movement()

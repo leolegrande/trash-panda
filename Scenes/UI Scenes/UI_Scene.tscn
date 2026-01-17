@@ -46,7 +46,7 @@ pause_menu = NodePath("Pause Menu")
 options_menu = NodePath("Options Menu")
 main_menu_scene = "res://Scenes/main_menu.tscn"
 
-[node name="DEBUGTEXT" type="Label" parent="." groups=["Player"]]
+[node name="DEBUGTEXT" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 292.0

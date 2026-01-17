@@ -6,6 +6,7 @@ class_name GumShoeAbility
 @export var ceiling_detection : RayCast2D
 @export var right_wall_detection : RayCast2D
 @export var left_wall_detection : RayCast2D
+@export var gumshoe_sfx : AudioStream
 
 var wall_normal : Vector2
 var snap_position : Vector2
@@ -75,6 +76,7 @@ func detect_collisions() -> bool:
 		return false
 
 func stick_to_wall():
+	gm.parent.play_audio(gumshoe_sfx)
 	gm.using_ability = true
 	rotate_player()
 	mc.global_position = snap_position

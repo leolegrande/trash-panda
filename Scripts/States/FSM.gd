@@ -2,10 +2,12 @@ extends Node
 
 class_name FSM
 
+
 @export var mc : MovementController
 @export var animPlayer : AnimatedSprite2D
 @export var starting_state : State
 var current_state : State
+@export var player_audio : AudioStreamPlayer
 
 func _ready():
 	init_fsm()
@@ -37,3 +39,7 @@ func _process(delta):
 func _unhandled_input(event):
 	if (GameManager.game_paused): return
 	current_state.process_input(event)
+
+func play_audio(audio : AudioStream):
+	player_audio.stream = audio
+	player_audio.play()

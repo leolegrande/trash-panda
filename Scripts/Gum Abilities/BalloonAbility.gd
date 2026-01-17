@@ -3,20 +3,20 @@ extends GumAbility
 @export var ground_state : State
 @export var BALLOON_FORCE : float
 @export var BALLOON_GRAVITY : float
-@export var balloon_sprite : Sprite2D
+@export var balloon_sprite : AnimatedSprite2D
 
-@onready var pop_sfx: AudioStreamPlayer2D = $PopSFX
-@onready var anim: AnimationPlayer = $AnimationPlayer
-
-
+@export var bubble_sfx: AudioStream
+@export var pop_sfx: AudioStream
 
 func _ready():
 	balloon_sprite.visible = false
 
 func enter():
+	balloon_sprite.visible = true
+	balloon_sprite.play("blow_bubble")
+	gm.parent.play_audio(bubble_sfx)
 	print("used %s!" % ability_name)
 	gm.using_ability = true
-	anim.play("blow")
 	balloon_sprite.visible = true
 	init_balloon()
 
@@ -37,10 +37,10 @@ func process_physics(delta : float):
 
 
 func exit():
-	pop_sfx.play()
+	gm.parent.play_audio(pop_sfx)
+	balloon_sprite.play("pop_bubble")
 	gm.using_ability = false
 	gm.mc.gravity = gm.mc.DEFAULT_GRAVITY
-	balloon_sprite.visible = false
 	gm.start_ability_cooldown()
 	return
 
