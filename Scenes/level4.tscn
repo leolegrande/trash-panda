@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://cgcrj7xifvqbw"]
+[gd_scene load_steps=63 format=4 uid="uid://cgcrj7xifvqbw"]
 
 [ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="1_e1ips"]
 [ext_resource type="Texture2D" uid="uid://e7l03bs1pjhd" path="res://Textures/Skyscraper_Buildings_edited.png" id="2_n4fv4"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://1i4e4ylyyyva" path="res://Textures/Background3_exp.png" id="19_0jb0a"]
 [ext_resource type="Texture2D" uid="uid://cg8s1a3srcsea" path="res://Textures/Background4_exp.png" id="20_wn2go"]
 [ext_resource type="PackedScene" uid="uid://bflbdcabbwv3v" path="res://Scenes/objects/lever.tscn" id="21_mwl31"]
+[ext_resource type="Script" uid="uid://dwrybgfolh88x" path="res://Scenes/dialogue.gd" id="22_n4fv4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2k2h5"]
 atlas = ExtResource("2_n4fv4")
@@ -766,3 +767,7 @@ position = Vector2(2406, 322)
 
 [node name="Lever2" parent="." instance=ExtResource("21_mwl31")]
 position = Vector2(-88, 432)
+
+[node name="Dialogue" type="Node2D" parent="."]
+script = ExtResource("22_n4fv4")
+timelinestring = "timeline4_start"

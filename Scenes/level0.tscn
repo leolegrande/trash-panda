@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://bq7xkwmwtaoh1"]
+[gd_scene load_steps=117 format=4 uid="uid://bq7xkwmwtaoh1"]
 
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_svvko"]
 [ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="2_hppqq"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://deahuwurnssqu" path="res://Textures/2_edit.png" id="26_epgpn"]
 [ext_resource type="Texture2D" uid="uid://biofqu61rtmnd" path="res://Textures/3_edit.png" id="27_gd0ql"]
 [ext_resource type="Texture2D" uid="uid://hcywcm2x070s" path="res://Textures/4_edit.png" id="28_3hqf8"]
+[ext_resource type="Script" uid="uid://dwrybgfolh88x" path="res://Scenes/dialogue.gd" id="29_hppqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ney"]
 size = Vector2(34, 24)
@@ -687,12 +688,12 @@ infinite_chew = true
 has_ability = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1, -12)
+position = Vector2(-72, -12)
 shape = SubResource("RectangleShape2D_o4ney")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
-position = Vector2(0, -35)
+position = Vector2(-72, -36)
 scale = Vector2(1.5333333, 1.5333333)
 sprite_frames = SubResource("SpriteFrames_yf17c")
 animation = &"idle"
@@ -837,7 +838,7 @@ collision_enabled = false
 [node name="THE BRANCH" type="TileMapLayer" parent="Tilemaps"]
 texture_filter = 1
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AABSANv/AAANABwAAABSANz/AAANAB4AAABTANv/AAANABwAAABTANz/AAANAB4AAABUANv/AAANABwAAABUANz/AAANAB4AAABVANv/AAAOABwAAABVANz/AAAOAB4AAAA=")
+tile_map_data = PackedByteArray("AABSANv/AAANABwAAABSANz/AAANAB4AAABTANv/AAANABwAAABTANz/AAANAB4AAABUANv/AAANABwAAABUANz/AAANAB4AAABVANv/AAAOABwAAABVANz/AAAOAB4AAACzAAoAAAAZAA8AAAC0AAoAAAAZAA8AAAC1AAoAAAAZAA8AAAC2AAoAAAAZAA8AAAC3AAoAAAAZAA8AAAA=")
 tile_set = ExtResource("20_tir8l")
 
 [node name="PlatformTileMapLayer2" type="TileMapLayer" parent="Tilemaps"]
@@ -915,6 +916,7 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("24_7awyj")
 complete_screen = NodePath("../UI Canvas/Level_Complete_Screen")
+timelinestring = "timeline0_end"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level_Complete_Trigger"]
 position = Vector2(0, -8)
@@ -934,7 +936,7 @@ repeat_size = Vector2(160, 0)
 modulate = Color(0.6955032, 0.6955031, 0.6955031, 1)
 z_index = -1
 texture_filter = 1
-position = Vector2(6.147787, 0.052096743)
+position = Vector2(-2.6542473, -3.6154182)
 texture = ExtResource("25_pxniw")
 centered = false
 
@@ -979,6 +981,10 @@ z_index = -1
 texture_filter = 1
 texture = ExtResource("28_3hqf8")
 centered = false
+
+[node name="Dialogue" type="Node2D" parent="."]
+script = ExtResource("29_hppqq")
+timelinestring = "timeline0_start"
 
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/Second Room" to="Room Cameras/Second Room" method="_on_body_entered"]
