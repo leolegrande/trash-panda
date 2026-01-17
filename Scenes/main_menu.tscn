@@ -338,6 +338,33 @@ text = "Leo Grandinetti & Max Speil"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="Credits/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+
+Assets:
+Tile set:
+Raccoon Sprite: seethingswarm
+Raccoon portraits: Captainskeleto
+Squirrel: Elthen
+Lizard: Stojkea
+Frog: Eli Haun
+Bugs: Pop Shop Packs
+Skyscrapers: OldNinjaCat
+Cars:	VOiD1 Gaming
+Fire: NYKNCK
+Water: Pimen
+Electric traps: Foozle
+
+Level 0 Background: craftpix
+Level 1 Background: craftpix
+Level 3 Background: craftpix
+Level 4 Background: MOSTLY MAD PRODUCTIONS
+
+Chew sound: Myles Moss
+Pop sound: Screamr
+Bubble sound: Rodrigo"
+
 [node name="CreditsBTM" type="Button" parent="Credits/MarginContainer"]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2

@@ -16,13 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://ccnxkubfs5jyx" path="res://Textures/Raccoon Player Animations/raccoon_fall_strip5.png" id="11_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://bn1e3syhys2qs" path="res://Textures/Raccoon Player Animations/raccoon_idle_blink_strip8.png" id="11_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://dloy8fe6plh6l" path="res://Textures/Objects/blow animation 2.png" id="11_qidb7"]
-[ext_resource type="AudioStream" uid="uid://2emg0o52b3xv" path="res://Textures/Sound Effects/bubble_blow.ogg" id="11_u7x0b"]
 [ext_resource type="Texture2D" uid="uid://dstbtht5ee7xx" path="res://Textures/Raccoon Player Animations/raccoon_fright_strip4.png" id="12_1e7my"]
 [ext_resource type="Texture2D" uid="uid://40cu2josktit" path="res://Textures/Objects/pop animation 1.png" id="12_70hv0"]
-[ext_resource type="AudioStream" uid="uid://djfyn13i4opr0" path="res://Textures/Sound Effects/whip.ogg" id="12_avx33"]
 [ext_resource type="Texture2D" uid="uid://bg3wc8h4yepu7" path="res://Textures/Raccoon Player Animations/raccoon_fall_gum.png" id="12_i2e8t"]
+[ext_resource type="AudioStream" uid="uid://bmvr037unv20o" path="res://Textures/Sound Effects/whip_final.wav" id="12_lyrkg"]
 [ext_resource type="Texture2D" uid="uid://br7ocbewslbs1" path="res://Textures/Raccoon Player Animations/raccoon_attack_strip7.png" id="13_arntx"]
 [ext_resource type="Texture2D" uid="uid://bfv7t2ekj1ttt" path="res://Textures/Raccoon Player Animations/raccoon_run_gum.png" id="13_lslt6"]
+[ext_resource type="AudioStream" uid="uid://bvb0plmwr28i1" path="res://Textures/Sound Effects/blowbubble_final.wav" id="14_c43xd"]
 [ext_resource type="Texture2D" uid="uid://jfwqfq4fqwf1" path="res://Textures/Raccoon Player Animations/raccoon_jump_strip14.png" id="14_lslt6"]
 [ext_resource type="Texture2D" uid="uid://cvpd716u27ese" path="res://Textures/Raccoon Player Animations/raccoon_idle_gum.png" id="15_5v66d"]
 [ext_resource type="Texture2D" uid="uid://b1w1a5x7kq15b" path="res://Textures/Raccoon Player Animations/raccoon_wallgrab_strip8.png" id="15_ulo2v"]
@@ -968,7 +968,7 @@ ground_state = NodePath("../../GroundState")
 whip_line = NodePath("Line2D")
 whip_hitbox = NodePath("Line2D/WhipEndpoint")
 whip_collider = NodePath("Line2D/WhipEndpoint/CollisionShape2D")
-whip_sfx = ExtResource("12_avx33")
+whip_sfx = ExtResource("12_lyrkg")
 ability_name = "GUMWHIP"
 
 [node name="Line2D" type="Line2D" parent="MovementFSM/GumManager/WhipAbility"]
@@ -989,7 +989,7 @@ ground_state = NodePath("../../AirborneState")
 BALLOON_FORCE = 300.0
 BALLOON_GRAVITY = 5.0
 balloon_sprite = NodePath("AnimatedSprite2D")
-bubble_sfx = ExtResource("11_u7x0b")
+bubble_sfx = ExtResource("14_c43xd")
 pop_sfx = ExtResource("10_qidb7")
 ability_name = "GUMBALLOON"
 
@@ -1007,7 +1007,7 @@ texture_filter = 1
 position = Vector2(0, -35)
 scale = Vector2(1.5333333, 1.5333333)
 sprite_frames = SubResource("SpriteFrames_yf17c")
-animation = &"jump"
+animation = &"idle_gum"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0

@@ -104,13 +104,13 @@ func handle_animations():
 	if (on_ceiling()):
 		if (mc.velocity.x != 0 && gm.animPlayer.animation != "gum_run"):
 			gm.animPlayer.play("gum_run")
-		elif (mc.velocity.x == 0 && gm.animPlayer.animation != "idle"):
-			gm.animPlayer.play("idle")
+		elif (mc.velocity.x == 0 && gm.animPlayer.animation != "idle_gum"):
+			gm.animPlayer.play("idle_gum")
 	else:
 		if (mc.velocity.y != 0 && gm.animPlayer.animation != "gum_run"):
 			gm.animPlayer.play("gum_run")
-		elif (mc.velocity.y == 0 && gm.animPlayer.animation != "idle"):
-			gm.animPlayer.play("idle")
+		elif (mc.velocity.y == 0 && gm.animPlayer.animation != "idle_gum"):
+			gm.animPlayer.play("idle_gum")
 
 func on_ceiling() -> bool:
 	return (wall_normal == Vector2.DOWN)
