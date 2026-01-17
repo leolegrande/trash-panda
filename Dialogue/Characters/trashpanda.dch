@@ -1,0 +1,202 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "style1",
+"suffix": ""
+},
+&"default_portrait": "first_base",
+&"description": "",
+&"display_name": "Trashpanda",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"base": {
+"export_overrides": {
+"image": "\"res://Textures/Racoon Portrait_1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"first_base": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_1_base.png\""
+},
+"mirror": false,
+"offset": Vector2(87, 180),
+"scale": 1,
+"scene": ""
+},
+"first_flat": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_4.png\""
+},
+"mirror": false,
+"offset": Vector2(87, 180),
+"scale": 1,
+"scene": ""
+},
+"first_slick": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_14.png\""
+},
+"mirror": false,
+"offset": Vector2(87, 180),
+"scale": 1,
+"scene": ""
+},
+"first_sparkle": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_6_sparkle.png\""
+},
+"mirror": false,
+"offset": Vector2(87, 180),
+"scale": 1,
+"scene": ""
+},
+"first_wideeye": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_13_wideeye.png\""
+},
+"mirror": false,
+"offset": Vector2(87, 180),
+"scale": 1,
+"scene": ""
+},
+"first_widemouth": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_12.png\""
+},
+"mirror": false,
+"offset": Vector2(87, 180),
+"scale": 1,
+"scene": ""
+},
+"flat": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_4.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"flat_grin": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_3smug.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"mouth": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_11_mouth.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"mouth_tongue": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_15.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sad": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_2_sad.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sexy": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_10.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"shine": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_5shine!.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"slick": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_14.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sparkle1": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_8.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sparkle2": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_6_sparkle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"suave": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_9_suave.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"wideeye": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_13_wideeye.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"widemouth": {
+"export_overrides": {
+"image": "\"res://Textures/Raccoon/Racoon Portrait_12.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=4 uid="uid://kncac00m4ja1"]
+[gd_scene load_steps=144 format=4 uid="uid://kncac00m4ja1"]
 
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_7u0fh"]
 [ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="2_y6f5s"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" uid="uid://dp37n40q82nde" path="res://Scripts/MovingPlatform.gd" id="26_m5r33"]
 [ext_resource type="Texture2D" uid="uid://ca7pen3pcw4wl" path="res://Textures/platform.png" id="27_qoef6"]
 [ext_resource type="PackedScene" uid="uid://cu24dg1k47ghd" path="res://Scenes/objects/electric_door.tscn" id="28_uua45"]
+[ext_resource type="Script" uid="uid://dwrybgfolh88x" path="res://Scenes/dialogue.gd" id="45_jkt7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksbbd"]
 size = Vector2(5, 5)
@@ -4850,7 +4851,7 @@ complete_text = "Level 3 Complete!"
 [node name="Room Cameras" type="Node2D" parent="."]
 
 [node name="First Room" type="Area2D" parent="Room Cameras" node_paths=PackedStringArray("camBounds")]
-position = Vector2(23, 30)
+position = Vector2(22, 30)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("22_l4te2")
@@ -4881,6 +4882,7 @@ collision_mask = 2
 script = ExtResource("23_g1igd")
 complete_screen = NodePath("../CanvasLayer/Level_Complete_Screen")
 level_num = 3
+timelinestring = "timeline3_end"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level_Complete_Trigger"]
 position = Vector2(-29, 0.5)
@@ -5072,6 +5074,10 @@ position = Vector2(1308, 1040)
 rotation = 3.1415927
 active = false
 switchable = NodePath("../Moving_Platform4")
+
+[node name="Dialogue" type="Node2D" parent="."]
+script = ExtResource("45_jkt7a")
+timelinestring = "timeline3_start"
 
 [connection signal="area_entered" from="Player/MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint" to="Player/MovementFSM/GumManager/WhipAbility" method="_on_whip_hitbox_area_entered"]
 [connection signal="body_entered" from="Player/MovementFSM/GumManager/WhipAbility/Line2D/WhipEndpoint" to="Player/MovementFSM/GumManager/WhipAbility" method="_on_whip_endpoint_body_entered"]

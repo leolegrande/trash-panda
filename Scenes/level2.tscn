@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=4 uid="uid://lebkr6vbf1bl"]
+[gd_scene load_steps=127 format=4 uid="uid://lebkr6vbf1bl"]
 
 [ext_resource type="TileSet" uid="uid://5q7amtl5rp2b" path="res://Tiles/PlatformTileSet.tres" id="1_n6lty"]
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_o1sn7"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://d1cyrcwggl0cw" path="res://Textures/lizard6.png" id="28_f7o3i"]
 [ext_resource type="Script" uid="uid://cul0dyjffi5i3" path="res://Scripts/Level Scripts/CameraTransition.gd" id="29_yjaoa"]
 [ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/Level Scripts/DeathBound.gd" id="32_se7y5"]
+[ext_resource type="Script" uid="uid://dwrybgfolh88x" path="res://Scenes/dialogue.gd" id="33_uvwjj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqk3y"]
 texture = ExtResource("2_arpkj")
@@ -1207,9 +1208,13 @@ tile_map_data = PackedByteArray("AAAcAOD/AAACABAAAAAcAOH/AAACABAAAAAdAOD/AAADABA
 tile_set = SubResource("TileSet_6p07m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Environment"]
-position = Vector2(-107, 47)
+texture_filter = 1
+position = Vector2(-50.000004, 44.000004)
+rotation = 3.1415927
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_vykfk")
+autoplay = "default"
+frame_progress = 0.6981034
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player_sprite") groups=["Player"]]
 position = Vector2(-295, -198)
@@ -1300,6 +1305,7 @@ collision_mask = 2
 script = ExtResource("22_ttvup")
 complete_screen = NodePath("../UI Canvas/Level_Complete_Screen")
 level_num = 2
+timelinestring = "timeline2_end"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level_Complete_Trigger"]
 position = Vector2(-8, 1)
@@ -1472,6 +1478,10 @@ position = Vector2(-492, -146)
 [node name="Deathbound_Collider" type="CollisionShape2D" parent="Death Bounds4"]
 position = Vector2(-41, 313.375)
 shape = SubResource("RectangleShape2D_5mqgo")
+
+[node name="Dialogue" type="Node2D" parent="."]
+script = ExtResource("33_uvwjj")
+timelinestring = "timeline2_start"
 
 [connection signal="body_entered" from="Level_Complete_Trigger" to="Level_Complete_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]

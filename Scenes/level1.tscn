@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=4 uid="uid://datqe6xnhdsdu"]
+[gd_scene load_steps=139 format=4 uid="uid://datqe6xnhdsdu"]
 
 [ext_resource type="Texture2D" uid="uid://c30hxpwtm34cv" path="res://Textures/roguelikeSheet_transparent.png" id="1_4otl7"]
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_c4ifa"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://dnx541it5cwlf" path="res://Textures/l7_fence.png" id="31_bi2ux"]
 [ext_resource type="Texture2D" uid="uid://dxyn1lf1s00fy" path="res://Textures/l8_lamps.png" id="32_eadek"]
 [ext_resource type="Script" uid="uid://cul0dyjffi5i3" path="res://Scripts/Level Scripts/CameraTransition.gd" id="33_p68j0"]
+[ext_resource type="Script" uid="uid://dwrybgfolh88x" path="res://Scenes/dialogue.gd" id="36_dr50b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_didp7"]
 texture = ExtResource("1_4otl7")
@@ -2793,6 +2794,7 @@ collision_mask = 2
 script = ExtResource("22_i2jya")
 complete_screen = NodePath("../UI Canvas/Level_Complete_Screen")
 level_num = 1
+timelinestring = "timeline1_end"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level_Complete_Trigger"]
 position = Vector2(-128, 101)
@@ -3217,6 +3219,10 @@ z_index = -1
 texture_filter = 1
 texture = ExtResource("32_eadek")
 centered = false
+
+[node name="Dialogue" type="Node2D" parent="."]
+script = ExtResource("36_dr50b")
+timelinestring = "timeline1_start"
 
 [connection signal="body_entered" from="Level_Complete_Trigger" to="Level_Complete_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
