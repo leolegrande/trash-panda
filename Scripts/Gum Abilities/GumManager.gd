@@ -98,7 +98,7 @@ func chew_gum():
 	if (chew_value < MAX_CHEW_VALUE):
 		chew_value = clampf(chew_value+1, 0, 5)
 		chew_cooldown = CHEW_COOLDOWN_DURATION
-		AudioManager.play_audio(chew_sfx)
+		parent.play_audio(chew_sfx)
 
 func use_ability():
 	if (ability_cooldown > 0):
