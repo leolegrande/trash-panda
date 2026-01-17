@@ -4,5 +4,5 @@ extends Switchable
 @export var platform_speed : float = 200
 
 func _physics_process(delta):
-	if (active):
+	if (active && !GameManager.game_paused):
 		path_follow.progress += delta * platform_speed

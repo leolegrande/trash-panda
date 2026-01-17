@@ -8,4 +8,6 @@ func _ready():
 	complete_label.text = complete_text
 
 func _on_button_pressed():
+	GameManager.pausable = true
+	GameManager.pause_game(false)
 	GameManager.change_scene(main_menu_path)

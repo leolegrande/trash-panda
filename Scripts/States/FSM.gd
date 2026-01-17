@@ -27,10 +27,13 @@ func change_state(newState : State):
 	#print("changing state to ", current_state.name)
 
 func _physics_process(delta):
+	if (GameManager.game_paused): return
 	current_state.process_physics(delta)
 
 func _process(delta):
+	if (GameManager.game_paused): return
 	current_state.process_frame(delta)
 
 func _unhandled_input(event):
+	if (GameManager.game_paused): return
 	current_state.process_input(event)
