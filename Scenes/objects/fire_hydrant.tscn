@@ -1,0 +1,286 @@
+[gd_scene load_steps=24 format=3 uid="uid://lnftjal6en4j"]
+
+[ext_resource type="Texture2D" uid="uid://bhkoebow58f3f" path="res://Textures/Objects/Fire/1.png" id="1_ejt5r"]
+[ext_resource type="Script" uid="uid://0h0387bfk0br" path="res://FireHydrant.gd" id="1_h4v7k"]
+[ext_resource type="Texture2D" uid="uid://cosddyveuq1gd" path="res://Textures/Objects/Fire/2.png" id="2_h4v7k"]
+[ext_resource type="Texture2D" uid="uid://db1y7tstrdkga" path="res://Textures/Objects/Fire/3.png" id="3_o4ooo"]
+[ext_resource type="Texture2D" uid="uid://x4l1cri0ll5q" path="res://Textures/Objects/Fire/4.png" id="4_v2dst"]
+[ext_resource type="Texture2D" uid="uid://dlwymkpyo1nly" path="res://Textures/Objects/Fire/5.png" id="5_v5a2i"]
+[ext_resource type="Texture2D" uid="uid://dbfgpo00h05r3" path="res://Textures/Objects/hydrant.png" id="6_3as68"]
+[ext_resource type="Texture2D" uid="uid://dsmuo02x2slds" path="res://Textures/Objects/Water Splash 01 - Spritesheet.png" id="7_jlh13"]
+[ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/Level Scripts/DeathBound.gd" id="9_2tllg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb1cq"]
+atlas = ExtResource("1_ejt5r")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr5sw"]
+atlas = ExtResource("2_h4v7k")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6iuc"]
+atlas = ExtResource("3_o4ooo")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im2i0"]
+atlas = ExtResource("4_v2dst")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueu5f"]
+atlas = ExtResource("5_v5a2i")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uxxx"]
+atlas = ExtResource("6_3as68")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1lc0"]
+atlas = ExtResource("7_jlh13")
+region = Rect2(198, 0, 66, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jd3a"]
+atlas = ExtResource("7_jlh13")
+region = Rect2(264, 0, 66, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsgxh"]
+atlas = ExtResource("7_jlh13")
+region = Rect2(0, 77, 66, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkfg2"]
+atlas = ExtResource("7_jlh13")
+region = Rect2(66, 77, 66, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4b2k"]
+atlas = ExtResource("7_jlh13")
+region = Rect2(132, 77, 66, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccrpw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb1cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr5sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6iuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im2i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueu5f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uxxx")
+}],
+"loop": true,
+"name": &"hydrant",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"nothing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1lc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jd3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsgxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkfg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4b2k")
+}],
+"loop": true,
+"name": &"water",
+"speed": 15.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0dvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb1cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr5sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6iuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im2i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueu5f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uxxx")
+}],
+"loop": true,
+"name": &"hydrant",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"nothing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1lc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jd3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsgxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkfg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4b2k")
+}],
+"loop": true,
+"name": &"water",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4q1i"]
+size = Vector2(195, 795)
+
+[node name="FireHydrant" type="Node2D" node_paths=PackedStringArray("water_animation", "fire_animations", "fire_collision_box")]
+script = ExtResource("1_h4v7k")
+water_animation = NodePath("Sprites/Water")
+fire_animations = [NodePath("Sprites/Fire"), NodePath("Sprites/Fire2"), NodePath("Sprites/Fire3"), NodePath("Sprites/Fire4"), NodePath("Sprites/Fire5"), NodePath("Sprites/Fire6"), NodePath("Sprites/Fire7"), NodePath("Sprites/Fire8"), NodePath("Sprites/Fire9"), NodePath("Sprites/Fire10"), NodePath("Sprites/Fire11"), NodePath("Sprites/Fire12")]
+fire_collision_box = NodePath("Death Bounds/Deathbound_Collider")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Water" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(235, 46)
+rotation = 1.5707964
+scale = Vector2(2.534567, 2.5345669)
+sprite_frames = SubResource("SpriteFrames_ccrpw")
+animation = &"water"
+
+[node name="Fire" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(406, -32)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.09043163
+
+[node name="Fire2" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(294, -66)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire3" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(373, -104)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire4" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(346, 0)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire5" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(405, -258)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.27392268
+
+[node name="Fire6" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(293, -292)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire7" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(372, -330)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire8" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(345, -226)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire9" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(406, -488)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.27392268
+
+[node name="Fire10" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(294, -522)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire11" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(373, -560)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Fire12" type="AnimatedSprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(346, -456)
+sprite_frames = SubResource("SpriteFrames_m0dvw")
+autoplay = "default"
+frame_progress = 0.9756729
+
+[node name="Death Bounds" type="Area2D" parent="." node_paths=PackedStringArray("spawn_pos")]
+position = Vector2(504, -410)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("9_2tllg")
+spawn_pos = NodePath("Respawn_Point")
+
+[node name="Respawn_Point" type="Marker2D" parent="Death Bounds"]
+position = Vector2(-680, 388)
+
+[node name="Deathbound_Collider" type="CollisionShape2D" parent="Death Bounds"]
+position = Vector2(-150.5, 127.5)
+shape = SubResource("RectangleShape2D_t4q1i")
+
+[connection signal="body_entered" from="Death Bounds" to="Death Bounds" method="_on_body_entered"]
