@@ -15,10 +15,7 @@ var ability_cooldown : float
 var using_ability : bool
 @export var infinite_chew : bool = false
 @export var has_ability : bool = true
-
-#@export var chew_sfx_path: NodePath
-@onready var chew_sfx: AudioStreamPlayer2D = $ChewSFX
-
+@export var chew_sfx : AudioStream
 
 
 func _ready():
@@ -101,7 +98,7 @@ func chew_gum():
 	if (chew_value < MAX_CHEW_VALUE):
 		chew_value = clampf(chew_value+1, 0, 5)
 		chew_cooldown = CHEW_COOLDOWN_DURATION
-		chew_sfx.play()
+		AudioManager.play_audio(chew_sfx)
 
 func use_ability():
 	if (ability_cooldown > 0):

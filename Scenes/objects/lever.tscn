@@ -1,21 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bflbdcabbwv3v"]
+[gd_scene load_steps=6 format=3 uid="uid://bflbdcabbwv3v"]
 
 [ext_resource type="Script" uid="uid://j2yisiipsmav" path="res://Scripts/WhipSwitch.gd" id="1_fhlr4"]
-[ext_resource type="Texture2D" uid="uid://bcdxclnvnp55w" path="res://Textures/lever_off.png" id="2_jjeqf"]
-[ext_resource type="Texture2D" uid="uid://d4cpmbphiupud" path="res://Textures/lever_on.png" id="3_31g2e"]
+[ext_resource type="Texture2D" uid="uid://bcdxclnvnp55w" path="res://Textures/Puzzle Objects/lever_off.png" id="2_jjeqf"]
+[ext_resource type="Texture2D" uid="uid://d4cpmbphiupud" path="res://Textures/Puzzle Objects/lever_on.png" id="3_31g2e"]
+[ext_resource type="AudioStream" uid="uid://dkvjwg2y0kvsl" path="res://switch_007.ogg" id="4_rm33i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f5pi"]
 size = Vector2(29, 27)
 
-[node name="Lever" type="Area2D" node_paths=PackedStringArray("switchable", "sprite")]
+[node name="Lever" type="Area2D" node_paths=PackedStringArray("sprite", "audio_player")]
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_fhlr4")
 active = true
-switchable = NodePath("")
 off_sprite = ExtResource("2_jjeqf")
 on_sprite = ExtResource("3_31g2e")
 sprite = NodePath("Sprite2D")
+audio_player = NodePath("AudioStreamPlayer2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -25,3 +26,7 @@ texture = ExtResource("2_jjeqf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 2.5)
 shape = SubResource("RectangleShape2D_4f5pi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rm33i")
+volume_db = -12.0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2emg0o52b3xv"
+path="res://.godot/imported/bubble_blow.ogg-0d6626d3dc80305ca6643fee159dde2d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Textures/Sound Effects/bubble_blow.ogg"
+dest_files=["res://.godot/imported/bubble_blow.ogg-0d6626d3dc80305ca6643fee159dde2d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

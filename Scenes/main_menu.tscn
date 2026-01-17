@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://n8ltlad2d2wy"]
+[gd_scene load_steps=7 format=3 uid="uid://n8ltlad2d2wy"]
 
 [ext_resource type="Script" uid="uid://de4f3o1sugfxv" path="res://Scripts/UI Scripts/MainMenu.gd" id="1_ce3w2"]
+[ext_resource type="AudioStream" uid="uid://lbw613ak4ptn" path="res://Music/main_menu_music.ogg" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://cdnp1ly3fypw1" path="res://Textures/icon_checkmark.png" id="2_48xlc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhts7"]
@@ -56,6 +57,7 @@ level1_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContaine
 level2_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level2/Level2_Completed")
 level3_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level3/Level3_Completed")
 level4_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Level4/Level4_Completed")
+main_menu_music = ExtResource("2_1ehe0")
 
 [node name="Main Panel" type="MarginContainer" parent="."]
 visible = false

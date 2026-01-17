@@ -38,4 +38,5 @@ func apply_gravity(_delta : float):
 	velocity += -gravity * up_direction
 
 func move():
+	if (GameManager.game_paused): return
 	move_and_slide()

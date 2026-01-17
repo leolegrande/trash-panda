@@ -11,6 +11,7 @@ var whip_active : bool = false
 var power : float
 var endpoint_vector : Vector2
 var whip_timer : float
+@export var whip_sfx : AudioStream
 
 func _ready():
 	activate_hitbox(false)
@@ -26,6 +27,7 @@ func enter():
 	gm.parent.change_state(ground_state)
 
 func init_whip():
+	gm.parent.play_audio(whip_sfx)
 	gm.using_ability = true
 	activate_hitbox(true)
 	activate_line()

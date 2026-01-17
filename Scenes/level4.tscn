@@ -1,8 +1,9 @@
-[gd_scene load_steps=92 format=4 uid="uid://cgcrj7xifvqbw"]
+[gd_scene load_steps=93 format=4 uid="uid://cgcrj7xifvqbw"]
 
 [ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="1_e1ips"]
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_s1odp"]
 [ext_resource type="Texture2D" uid="uid://e7l03bs1pjhd" path="res://Textures/Objects/Skyscraper_Buildings_edited.png" id="2_n4fv4"]
+[ext_resource type="AudioStream" uid="uid://b22kcvjvycs6h" path="res://Music/level4_music.ogg" id="2_s41we"]
 [ext_resource type="Texture2D" uid="uid://b5dxtw7j567jc" path="res://Textures/Objects/Cars/Classic.png" id="3_bkb0e"]
 [ext_resource type="Script" uid="uid://eu0t6knb08yx" path="res://Scripts/Level Scripts/CameraScript.gd" id="3_vu37y"]
 [ext_resource type="Texture2D" uid="uid://ds2dxof0h0p6p" path="res://Textures/Objects/Cars/Beetle.png" id="4_81lxm"]
@@ -612,6 +613,7 @@ size = Vector2(103, 101.25)
 [node name="Level4" type="Node2D" node_paths=PackedStringArray("init_bounds")]
 script = ExtResource("1_s1odp")
 init_bounds = NodePath("Room Cameras/First Room/RoomBounds2")
+level_music = ExtResource("2_s41we")
 
 [node name="Player" parent="." instance=ExtResource("1_e1ips")]
 position = Vector2(-1095, 447)

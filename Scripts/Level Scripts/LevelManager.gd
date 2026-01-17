@@ -4,12 +4,14 @@ var player : MovementController
 var spawn_point : Marker2D
 var main_cam : CameraScript
 @export var init_bounds : Camera2D
+@export var level_music : AudioStream
 
 func _ready():
 	player = get_tree().get_nodes_in_group("Player")[0] as MovementController
 	spawn_point = get_tree().get_nodes_in_group("Spawn")[0] as Marker2D
 	main_cam = get_tree().get_nodes_in_group("MainCam")[0] as CameraScript
 	reset_level()
+	AudioManager.play_audio(level_music)
 
 func _process(delta):
 	if (Input.is_action_just_pressed("Reset")):

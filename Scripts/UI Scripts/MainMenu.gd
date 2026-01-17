@@ -14,10 +14,12 @@ extends Control
 @export var level2_complete_icon : TextureRect
 @export var level3_complete_icon : TextureRect
 @export var level4_complete_icon : TextureRect
+@export var main_menu_music : AudioStream
 
 ### MAIN MENU BUTTONS ###
 
 func _ready():
+	AudioManager.play_audio(main_menu_music)
 	set_complete_status()
 	if (!GameManager.start_on_level_select):
 		main_menu_panel.visible = true

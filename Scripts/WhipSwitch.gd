@@ -7,6 +7,7 @@ class_name WhipSwitch
 @export var off_sprite : Texture2D
 @export var on_sprite : Texture2D
 @export var sprite : Sprite2D
+@export var audio_player : AudioStreamPlayer2D
 
 func _ready():
 	sprite.texture = on_sprite if active else off_sprite
@@ -17,3 +18,4 @@ func toggle():
 	active = !active
 	sprite.texture = on_sprite if active else off_sprite
 	switchable.toggle()
+	audio_player.play()
