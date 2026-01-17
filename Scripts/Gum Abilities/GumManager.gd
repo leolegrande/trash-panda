@@ -29,6 +29,7 @@ func _ready():
 	set_ability(0)
 
 func _process(delta):
+	if (GameManager.game_paused): return
 	if (!has_ability):
 		return
 	handle_cooldown(delta)
@@ -62,6 +63,7 @@ func handle_cooldown(delta):
 			#change_ability(-1)
 
 func handle_input():
+	if (GameManager.game_paused): return
 	if Input.is_action_just_pressed("Chew"):
 		chew_gum()
 	if Input.is_action_just_pressed("GumAbility"):
