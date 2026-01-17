@@ -19,7 +19,7 @@
 &"portraits": {
 "base": {
 "export_overrides": {
-"image": "\"res://Textures/Racoon Portrait_1.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_1.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "first_base": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_1_base.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_1_base.png\""
 },
 "mirror": false,
 "offset": Vector2(87, 180),
@@ -37,7 +37,7 @@
 },
 "first_flat": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_4.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_4.png\""
 },
 "mirror": false,
 "offset": Vector2(87, 180),
@@ -46,7 +46,7 @@
 },
 "first_slick": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_14.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_14.png\""
 },
 "mirror": false,
 "offset": Vector2(87, 180),
@@ -55,7 +55,7 @@
 },
 "first_sparkle": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_6_sparkle.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_6_sparkle.png\""
 },
 "mirror": false,
 "offset": Vector2(87, 180),
@@ -64,7 +64,7 @@
 },
 "first_wideeye": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_13_wideeye.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_13_wideeye.png\""
 },
 "mirror": false,
 "offset": Vector2(87, 180),
@@ -73,7 +73,7 @@
 },
 "first_widemouth": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_12.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_12.png\""
 },
 "mirror": false,
 "offset": Vector2(87, 180),
@@ -82,7 +82,7 @@
 },
 "flat": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_4.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_4.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -91,7 +91,7 @@
 },
 "flat_grin": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_3smug.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_3smug.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -100,7 +100,7 @@
 },
 "mouth": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_11_mouth.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_11_mouth.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -109,7 +109,7 @@
 },
 "mouth_tongue": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_15.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_15.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -118,7 +118,7 @@
 },
 "sad": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_2_sad.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_2_sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -127,7 +127,7 @@
 },
 "sexy": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_10.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_10.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -136,7 +136,7 @@
 },
 "shine": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_5shine!.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_5shine!.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -145,7 +145,7 @@
 },
 "slick": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_14.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_14.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -154,7 +154,7 @@
 },
 "sparkle1": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_8.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_8.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -163,7 +163,7 @@
 },
 "sparkle2": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_6_sparkle.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_6_sparkle.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -172,7 +172,7 @@
 },
 "suave": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_9_suave.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_9_suave.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -181,7 +181,7 @@
 },
 "wideeye": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_13_wideeye.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_13_wideeye.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -190,7 +190,7 @@
 },
 "widemouth": {
 "export_overrides": {
-"image": "\"res://Textures/Raccoon/Racoon Portrait_12.png\""
+"image": "\"res://Textures/Raccoon Portraits/Racoon Portrait_12.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
