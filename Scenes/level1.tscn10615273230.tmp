@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=4 uid="uid://datqe6xnhdsdu"]
+[gd_scene load_steps=139 format=4 uid="uid://datqe6xnhdsdu"]
 
 [ext_resource type="Texture2D" uid="uid://c30hxpwtm34cv" path="res://Textures/Tilesets/roguelikeSheet_transparent.png" id="1_4otl7"]
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_c4ifa"]
@@ -9,11 +9,9 @@
 [ext_resource type="Script" uid="uid://btahc4ldeix6e" path="res://Scripts/States/JumpState.gd" id="6_nstho"]
 [ext_resource type="Script" uid="uid://cbirm8hibl4jj" path="res://Scripts/Gum Abilities/GumManager.gd" id="7_p4bhf"]
 [ext_resource type="Script" uid="uid://cnji10wlbrn2q" path="res://Scripts/Gum Abilities/BalloonAbility.gd" id="8_tfirt"]
+[ext_resource type="Texture2D" uid="uid://c5ksibp2qek5u" path="res://Textures/emote__.png" id="9_mwr0o"]
 [ext_resource type="Texture2D" uid="uid://ccnxkubfs5jyx" path="res://Textures/Raccoon Player Animations/raccoon_fall_strip5.png" id="10_8wyvm"]
-[ext_resource type="Texture2D" uid="uid://dloy8fe6plh6l" path="res://Textures/Objects/blow animation 2.png" id="10_p4bhf"]
 [ext_resource type="Texture2D" uid="uid://dstbtht5ee7xx" path="res://Textures/Raccoon Player Animations/raccoon_fright_strip4.png" id="11_6knn8"]
-[ext_resource type="AudioStream" uid="uid://ih03pbjaarpn" path="res://Textures/Sound Effects/chew_final.wav" id="11_nstho"]
-[ext_resource type="AudioStream" uid="uid://dyxo1p08j77e6" path="res://Textures/Sound Effects/pop_final.wav" id="11_p4bhf"]
 [ext_resource type="Texture2D" uid="uid://bfv7t2ekj1ttt" path="res://Textures/Raccoon Player Animations/raccoon_run_gum.png" id="12_tmxcw"]
 [ext_resource type="Texture2D" uid="uid://bn1e3syhys2qs" path="res://Textures/Raccoon Player Animations/raccoon_idle_blink_strip8.png" id="13_vb1ix"]
 [ext_resource type="Texture2D" uid="uid://jfwqfq4fqwf1" path="res://Textures/Raccoon Player Animations/raccoon_jump_strip14.png" id="14_hrsvw"]
@@ -1991,86 +1989,6 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_didp7")
 
-[sub_resource type="Animation" id="Animation_qidb7"]
-resource_name = "blow"
-length = 0.40000334
-step = 0.06666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.6666667, 0.73333335),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 7]
-}
-
-[sub_resource type="Animation" id="Animation_70hv0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_p4bhf"]
-resource_name = "blow1"
-length = 0.400004
-step = 0.04
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03999999, 0.08, 0.120000005, 0.16, 0.19999999, 0.24000001, 0.28, 0.32, 0.36),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [3, 4, 5, 6, 7, 8, 9, 10, 11, 11]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8flut"]
-_data = {
-&"RESET": SubResource("Animation_70hv0"),
-&"blow": SubResource("Animation_qidb7"),
-&"blow1": SubResource("Animation_p4bhf")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4ney"]
 size = Vector2(34, 24)
 
@@ -2842,21 +2760,11 @@ ability_name = "GUMBALLOON"
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/MovementFSM/GumManager/BalloonAbility"]
 visible = false
+modulate = Color(1, 0.39215687, 1, 1)
 texture_filter = 1
-position = Vector2(13, -30)
-texture = ExtResource("10_p4bhf")
-hframes = 12
-
-[node name="PopSFX" type="AudioStreamPlayer2D" parent="Player/MovementFSM/GumManager/BalloonAbility"]
-stream = ExtResource("11_p4bhf")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/MovementFSM/GumManager/BalloonAbility"]
-libraries = {
-&"": SubResource("AnimationLibrary_8flut")
-}
-
-[node name="ChewSFX" type="AudioStreamPlayer2D" parent="Player/MovementFSM/GumManager"]
-stream = ExtResource("11_nstho")
+position = Vector2(0, -47)
+scale = Vector2(3, 3)
+texture = ExtResource("9_mwr0o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, -12)
