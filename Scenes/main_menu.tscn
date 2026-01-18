@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://n8ltlad2d2wy"]
+[gd_scene load_steps=10 format=3 uid="uid://n8ltlad2d2wy"]
 
 [ext_resource type="Script" uid="uid://de4f3o1sugfxv" path="res://Scripts/UI Scripts/MainMenu.gd" id="1_ce3w2"]
 [ext_resource type="AudioStream" uid="uid://lbw613ak4ptn" path="res://Music/main_menu_music.ogg" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://cdnp1ly3fypw1" path="res://Textures/UI/icon_checkmark.png" id="2_48xlc"]
 [ext_resource type="Texture2D" uid="uid://xnpi3016hq25" path="res://Textures/Backgrounds/Parallax/Suburbs/l1_background.png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://nfkouws6hqhf" path="res://Textures/UI/lock_closed.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dq4ii3qfyjyt0" path="res://Textures/UI/unlocked.png" id="5_cp0ys"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhts7"]
 
@@ -59,6 +61,9 @@ level2_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContaine
 level3_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer2/Level3/Level3_Completed")
 level4_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Level4/Level4_Completed")
 main_menu_music = ExtResource("2_1ehe0")
+completed_texture = ExtResource("2_48xlc")
+locked_texture = ExtResource("4_opfnp")
+unlocked_texture = ExtResource("5_cp0ys")
 
 [node name="Menu_Background" type="TextureRect" parent="."]
 layout_mode = 1

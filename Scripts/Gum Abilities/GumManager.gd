@@ -86,7 +86,7 @@ func change_ability(dir : int):
 	set_ability((current_ability_index+dir)%ability_list.size())
 
 func set_ability(index : int):
-	var new_ability = ability_list.get(index)
+	var new_ability = ability_list[index]
 	if (new_ability):
 		current_ability = new_ability
 		current_ability_index = ability_list.find(current_ability)

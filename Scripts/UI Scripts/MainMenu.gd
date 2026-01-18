@@ -15,12 +15,15 @@ extends Control
 @export var level3_complete_icon : TextureRect
 @export var level4_complete_icon : TextureRect
 @export var main_menu_music : AudioStream
+@export var completed_texture : Texture
+@export var locked_texture : Texture
+@export var unlocked_texture : Texture
 
 ### MAIN MENU BUTTONS ###
 
 func _ready():
 	AudioManager.play_audio(main_menu_music)
-	set_complete_status()
+	set_level_statuses()
 	if (!GameManager.start_on_level_select):
 		main_menu_panel.visible = true
 		level_select_panel.visible = false
@@ -32,12 +35,50 @@ func _ready():
 		credits_panel.visible = false
 		options_panel.visible = false
 
-func set_complete_status():
-	tutorial_complete_icon.visible = GameManager.tutorial_complete
-	level1_complete_icon.visible = GameManager.level1_complete
-	level2_complete_icon.visible = GameManager.level2_complete
-	level3_complete_icon.visible = GameManager.level3_complete
-	level4_complete_icon.visible = GameManager.level4_complete
+func set_level_statuses():
+	#okay THIS might be the worst code i've ever written
+	#level4
+	if (GameManager.level3_complete):
+		if (GameManager.level4_complete):
+			level4_complete_icon.texture = completed_texture
+		else:
+			level4_complete_icon.texture = unlocked_texture
+	else:
+			level4_complete_icon.texture = locked_texture
+			var button = level4_complete_icon.get_parent() as Button
+			button.disabled = true
+	#level3
+	if (GameManager.level2_complete):
+		if (GameManager.level3_complete):
+			level3_complete_icon.texture = completed_texture
+		else:
+			level3_complete_icon.texture = unlocked_texture
+	else:
+			level3_complete_icon.texture = locked_texture
+			var button = level3_complete_icon.get_parent() as Button
+			button.disabled = true
+	#level2
+	if (GameManager.level1_complete):
+		if (GameManager.level2_complete):
+			level2_complete_icon.texture = completed_texture
+		else:
+			level2_complete_icon.texture = unlocked_texture
+	else:
+			level2_complete_icon.texture = locked_texture
+			var button = level2_complete_icon.get_parent() as Button
+			button.disabled = true
+	#level1 & tutorial
+	if (GameManager.tutorial_complete):
+		tutorial_complete_icon.texture = completed_texture
+		if (GameManager.level1_complete):
+			level1_complete_icon.texture = completed_texture
+		else:
+			level1_complete_icon.texture = unlocked_texture
+	else:
+		tutorial_complete_icon.texture = unlocked_texture
+		level1_complete_icon.texture = locked_texture
+		var button = level1_complete_icon.get_parent() as Button
+		button.disabled = true
 
 func _on_level_select_pressed():
 	main_menu_panel.visible = false
