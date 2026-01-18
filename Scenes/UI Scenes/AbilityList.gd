@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends VBoxContainer
 
 var gum_manager : GumManager
 @export var slots : Array[TextureRect]

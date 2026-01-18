@@ -186,20 +186,50 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1avqd")
 text = "Back"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-modulate = Color(1, 1, 1, 0.6862745)
+[node name="Ability_list" type="VBoxContainer" parent="." node_paths=PackedStringArray("slots")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 328.0
+grow_horizontal = 0
+alignment = 1
+script = ExtResource("7_ly5r8")
+slots = [NodePath("Slot1"), NodePath("Slot2"), NodePath("Slot3")]
+active_color = Color(1, 1, 1, 1)
+inactive_color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="Slot1" type="TextureRect" parent="Ability_list"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_l0vgj")
+expand_mode = 1
+
+[node name="Slot2" type="TextureRect" parent="Ability_list"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_3gs4h")
+texture = ExtResource("4_ly5r8")
+expand_mode = 1
+
+[node name="Slot3" type="TextureRect" parent="Ability_list"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_3gs4h")
+texture = ExtResource("5_csptc")
+expand_mode = 1
+
+[node name="Chew_Meter2" type="TextureProgressBar" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(408, 104)
 layout_mode = 1
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 428.0
-offset_bottom = 234.0
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Chew_Meter2" type="TextureProgressBar" parent="VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(408, 104)
-layout_mode = 2
+offset_bottom = 124.0
 size_flags_vertical = 10
 max_value = 5.0
 step = 0.1
@@ -209,35 +239,6 @@ texture_under = ExtResource("3_ynmmm")
 texture_over = ExtResource("4_mkkwc")
 texture_progress = ExtResource("5_dxnp7")
 script = ExtResource("6_mkkwc")
-
-[node name="Ability_list" type="HBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("slots")]
-layout_mode = 2
-alignment = 1
-script = ExtResource("7_ly5r8")
-slots = [NodePath("Slot1"), NodePath("Slot2"), NodePath("Slot3")]
-active_color = Color(1, 1, 1, 1)
-inactive_color = Color(0.5931336, 0.59313357, 0.59313357, 1)
-
-[node name="Slot1" type="TextureRect" parent="VBoxContainer/Ability_list"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = SubResource("Theme_3gs4h")
-texture = ExtResource("3_l0vgj")
-expand_mode = 1
-
-[node name="Slot2" type="TextureRect" parent="VBoxContainer/Ability_list"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = SubResource("Theme_3gs4h")
-texture = ExtResource("4_ly5r8")
-expand_mode = 1
-
-[node name="Slot3" type="TextureRect" parent="VBoxContainer/Ability_list"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-theme = SubResource("Theme_3gs4h")
-texture = ExtResource("5_csptc")
-expand_mode = 1
 
 [connection signal="pressed" from="Pause Menu/Panel/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Menu/Panel/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
