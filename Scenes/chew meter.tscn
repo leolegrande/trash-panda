@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://de4f3o1sugfxv" path="res://Scripts/UI Scripts/MainMenu.gd" id="1_qy6de"]
 [ext_resource type="AudioStream" uid="uid://lbw613ak4ptn" path="res://Music/main_menu_music.ogg" id="2_t3y1j"]
-[ext_resource type="Texture2D" uid="uid://b4l442ddqoegb" path="res://Textures/meter-1.png" id="3_0wfjw"]
-[ext_resource type="Texture2D" uid="uid://dg3oxcv0s2wis" path="res://Textures/meter-2.png" id="4_04bo5"]
-[ext_resource type="Texture2D" uid="uid://bevofl1ycoppm" path="res://Textures/meter-3.png" id="5_gtgu8"]
+[ext_resource type="Texture2D" uid="uid://b4l442ddqoegb" path="res://Textures/UI/meter-1.png" id="3_0wfjw"]
+[ext_resource type="Texture2D" uid="uid://dg3oxcv0s2wis" path="res://Textures/UI/meter-2.png" id="4_04bo5"]
+[ext_resource type="Texture2D" uid="uid://bevofl1ycoppm" path="res://Textures/UI/meter-3.png" id="5_gtgu8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhts7"]
 
-[node name="Main Menu" type="Control" node_paths=PackedStringArray("main_menu_panel", "level_select_panel", "options_panel", "credits_panel", "tutorial_complete_icon", "level1_complete_icon", "level2_complete_icon", "level3_complete_icon", "level4_complete_icon")]
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("main_menu_panel", "level_select_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,18 +18,11 @@ grow_vertical = 2
 script = ExtResource("1_qy6de")
 main_menu_panel = NodePath("Main Panel")
 level_select_panel = NodePath("Level Select")
-options_panel = NodePath("")
-credits_panel = NodePath("")
 tutorial_scene = "res://Scenes/level0.tscn"
 level1_scene = "res://Scenes/level1.tscn"
 level2_scene = "res://Scenes/level2.tscn"
 level3_scene = "res://Scenes/level3.tscn"
 level4_scene = "res://Scenes/level4.tscn"
-tutorial_complete_icon = NodePath("")
-level1_complete_icon = NodePath("")
-level2_complete_icon = NodePath("")
-level3_complete_icon = NodePath("")
-level4_complete_icon = NodePath("")
 main_menu_music = ExtResource("2_t3y1j")
 
 [node name="Main Panel" type="MarginContainer" parent="."]

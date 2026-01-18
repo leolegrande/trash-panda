@@ -9,6 +9,7 @@ var gravity : float = 30
 
 @export var player_sprite : AnimatedSprite2D
 @export var anim_player : AnimationPlayer
+@export var gum_manager : GumManager
 
 
 func _ready():

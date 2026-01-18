@@ -1,7 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6pbse5p4p00g"]
+[gd_scene load_steps=15 format=3 uid="uid://b6pbse5p4p00g"]
 
 [ext_resource type="Script" uid="uid://bwnfpqjexdky5" path="res://Scripts/UI Scripts/Debug.gd" id="1_22g2l"]
 [ext_resource type="Script" uid="uid://duf2yjxnqvq33" path="res://Scripts/UI Scripts/GameUI.gd" id="1_httrr"]
+[ext_resource type="Texture2D" uid="uid://bpnskguo3v16w" path="res://Textures/UI/balloons(2).png" id="3_l0vgj"]
+[ext_resource type="Texture2D" uid="uid://b4l442ddqoegb" path="res://Textures/UI/meter-1.png" id="3_ynmmm"]
+[ext_resource type="Texture2D" uid="uid://dbk03syoq3ydj" path="res://Textures/UI/lizard-tongue(1).png" id="4_ly5r8"]
+[ext_resource type="Texture2D" uid="uid://bevofl1ycoppm" path="res://Textures/UI/meter-3.png" id="4_mkkwc"]
+[ext_resource type="Texture2D" uid="uid://ckvrnji41nvr5" path="res://Textures/UI/sticky-boot(1).png" id="5_csptc"]
+[ext_resource type="Texture2D" uid="uid://dg3oxcv0s2wis" path="res://Textures/UI/meter-2.png" id="5_dxnp7"]
+[ext_resource type="Script" uid="uid://c8rir4smjqevj" path="res://Scenes/UI Scenes/ChewMeterUI.gd" id="6_mkkwc"]
+[ext_resource type="Script" uid="uid://dab5omdxnxcwv" path="res://Scenes/UI Scenes/AbilityList.gd" id="7_ly5r8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1avqd"]
 
@@ -34,6 +42,8 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="Theme" id="Theme_3gs4h"]
+
 [node name="UI" type="Control" node_paths=PackedStringArray("pause_menu", "options_menu")]
 layout_mode = 3
 anchors_preset = 15
@@ -47,6 +57,7 @@ options_menu = NodePath("Options Menu")
 main_menu_scene = "res://Scenes/main_menu.tscn"
 
 [node name="DEBUGTEXT" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_right = 292.0
@@ -187,6 +198,57 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1avqd")
 text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.6862745)
+layout_mode = 1
+offset_right = 408.0
+offset_bottom = 214.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Chew_Meter2" type="TextureProgressBar" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(408, 104)
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 5.0
+step = 0.1
+value = 3.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_ynmmm")
+texture_over = ExtResource("4_mkkwc")
+texture_progress = ExtResource("5_dxnp7")
+script = ExtResource("6_mkkwc")
+
+[node name="Ability_list" type="HBoxContainer" parent="VBoxContainer" node_paths=PackedStringArray("slots")]
+layout_mode = 2
+alignment = 1
+script = ExtResource("7_ly5r8")
+slots = [NodePath("Slot1"), NodePath("Slot2"), NodePath("Slot3")]
+active_color = Color(1, 1, 1, 1)
+inactive_color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="Slot1" type="TextureRect" parent="VBoxContainer/Ability_list"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_3gs4h")
+texture = ExtResource("3_l0vgj")
+expand_mode = 1
+
+[node name="Slot2" type="TextureRect" parent="VBoxContainer/Ability_list"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_3gs4h")
+texture = ExtResource("4_ly5r8")
+expand_mode = 1
+
+[node name="Slot3" type="TextureRect" parent="VBoxContainer/Ability_list"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme = SubResource("Theme_3gs4h")
+texture = ExtResource("5_csptc")
+expand_mode = 1
 
 [connection signal="pressed" from="Pause Menu/Panel/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause Menu/Panel/MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

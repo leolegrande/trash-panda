@@ -104,7 +104,7 @@ func use_ability():
 	if (ability_cooldown > 0):
 		print("ability still on cooldown!")
 		return
-	#if (chew_value < 1):
-		#print("not enough chew to use ability!")
-		#return
+	if (chew_value < 0.1):
+		print("not enough chew to use ability!")
+		return
 	parent.change_state(current_ability)

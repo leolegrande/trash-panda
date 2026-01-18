@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://n8ltlad2d2wy"]
+[gd_scene load_steps=8 format=3 uid="uid://n8ltlad2d2wy"]
 
 [ext_resource type="Script" uid="uid://de4f3o1sugfxv" path="res://Scripts/UI Scripts/MainMenu.gd" id="1_ce3w2"]
 [ext_resource type="AudioStream" uid="uid://lbw613ak4ptn" path="res://Music/main_menu_music.ogg" id="2_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://cdnp1ly3fypw1" path="res://Textures/icon_checkmark.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cdnp1ly3fypw1" path="res://Textures/UI/icon_checkmark.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://xnpi3016hq25" path="res://Textures/Backgrounds/Parallax/Suburbs/l1_background.png" id="3_ce3w2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhts7"]
 
@@ -59,8 +60,16 @@ level3_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContaine
 level4_complete_icon = NodePath("Level Select/Panel/MarginContainer/HBoxContainer/VBoxContainer3/Level4/Level4_Completed")
 main_menu_music = ExtResource("2_1ehe0")
 
+[node name="Menu_Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ce3w2")
+
 [node name="Main Panel" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.35
@@ -123,6 +132,7 @@ theme_override_font_sizes/font_size = 70
 text = "Exit Game"
 
 [node name="Level Select" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

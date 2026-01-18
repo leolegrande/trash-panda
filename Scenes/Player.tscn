@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://dc2y80l3ut6ac"]
+[gd_scene load_steps=150 format=3 uid="uid://dc2y80l3ut6ac"]
 
 [ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="1_nn08x"]
 [ext_resource type="Script" uid="uid://cotu33y5xe5py" path="res://Scripts/States/FSM.gd" id="2_52ee3"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://df8o5r8wqug6" path="res://Textures/Sound Effects/gumshoe.ogg" id="10_c43xd"]
 [ext_resource type="Script" uid="uid://dca780cqk67yr" path="res://Scripts/Gum Abilities/GumWhipAbility.gd" id="10_ksbbd"]
 [ext_resource type="AudioStream" uid="uid://dyxo1p08j77e6" path="res://Textures/Sound Effects/pop_final.wav" id="10_qidb7"]
+[ext_resource type="Texture2D" uid="uid://ckvrnji41nvr5" path="res://Textures/UI/sticky-boot(1).png" id="11_c43xd"]
 [ext_resource type="Texture2D" uid="uid://ccnxkubfs5jyx" path="res://Textures/Raccoon Player Animations/raccoon_fall_strip5.png" id="11_m0x7a"]
 [ext_resource type="Texture2D" uid="uid://bn1e3syhys2qs" path="res://Textures/Raccoon Player Animations/raccoon_idle_blink_strip8.png" id="11_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://dloy8fe6plh6l" path="res://Textures/Objects/blow animation 2.png" id="11_qidb7"]
@@ -24,12 +25,14 @@
 [ext_resource type="Texture2D" uid="uid://bfv7t2ekj1ttt" path="res://Textures/Raccoon Player Animations/raccoon_run_gum.png" id="13_lslt6"]
 [ext_resource type="AudioStream" uid="uid://bvb0plmwr28i1" path="res://Textures/Sound Effects/blowbubble_final.wav" id="14_c43xd"]
 [ext_resource type="Texture2D" uid="uid://jfwqfq4fqwf1" path="res://Textures/Raccoon Player Animations/raccoon_jump_strip14.png" id="14_lslt6"]
+[ext_resource type="Texture2D" uid="uid://dbk03syoq3ydj" path="res://Textures/UI/lizard-tongue(1).png" id="14_rxg2u"]
 [ext_resource type="Texture2D" uid="uid://cvpd716u27ese" path="res://Textures/Raccoon Player Animations/raccoon_idle_gum.png" id="15_5v66d"]
 [ext_resource type="Texture2D" uid="uid://b1w1a5x7kq15b" path="res://Textures/Raccoon Player Animations/raccoon_wallgrab_strip8.png" id="15_ulo2v"]
 [ext_resource type="Texture2D" uid="uid://dwbhqu5t4jj3h" path="res://Textures/Raccoon Player Animations/raccoon_land_strip3.png" id="16_5v66d"]
 [ext_resource type="Texture2D" uid="uid://g4a1j11um7jb" path="res://Textures/Raccoon Player Animations/raccoon_whip_v1.png" id="17_1iu4k"]
 [ext_resource type="Texture2D" uid="uid://cjpmujl6u2si4" path="res://Textures/Raccoon Player Animations/raccoon_jump_gum.png" id="17_i2e8t"]
 [ext_resource type="Texture2D" uid="uid://c01o5u271d5uy" path="res://Textures/Raccoon Player Animations/raccoon_run_strip8.png" id="17_x63xi"]
+[ext_resource type="Texture2D" uid="uid://bpnskguo3v16w" path="res://Textures/UI/balloons(2).png" id="18_xixlo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksbbd"]
 size = Vector2(5, 5)
@@ -905,11 +908,12 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "gum_manager") groups=["Player"]]
 collision_layer = 2
 collision_mask = 101
 script = ExtResource("1_nn08x")
 player_sprite = NodePath("AnimatedSprite2D")
+gum_manager = NodePath("MovementFSM/GumManager")
 
 [node name="MovementFSM" type="Node2D" parent="." node_paths=PackedStringArray("mc", "animPlayer", "starting_state", "player_audio")]
 script = ExtResource("2_52ee3")
@@ -938,7 +942,6 @@ script = ExtResource("7_bhhdu")
 CHEW_COOLDOWN_DURATION = 0.2
 ABILITY_COOLDOWN_DURATION = 0.0
 CHEW_DECAY_SPEED = 0.5
-infinite_chew = true
 chew_sfx = ExtResource("7_8flut")
 
 [node name="ShoeAbility" type="Node2D" parent="MovementFSM/GumManager" node_paths=PackedStringArray("airborneState", "ceiling_detection", "right_wall_detection", "left_wall_detection")]
@@ -948,6 +951,7 @@ ceiling_detection = NodePath("CeilingCast")
 right_wall_detection = NodePath("RightWallCast")
 left_wall_detection = NodePath("LeftWallCast")
 gumshoe_sfx = ExtResource("10_c43xd")
+icon = ExtResource("11_c43xd")
 ability_name = "GUMSHOE"
 
 [node name="CeilingCast" type="RayCast2D" parent="MovementFSM/GumManager/ShoeAbility"]
@@ -969,6 +973,7 @@ whip_line = NodePath("Line2D")
 whip_hitbox = NodePath("Line2D/WhipEndpoint")
 whip_collider = NodePath("Line2D/WhipEndpoint/CollisionShape2D")
 whip_sfx = ExtResource("12_lyrkg")
+icon = ExtResource("14_rxg2u")
 ability_name = "GUMWHIP"
 
 [node name="Line2D" type="Line2D" parent="MovementFSM/GumManager/WhipAbility"]
@@ -991,6 +996,7 @@ BALLOON_GRAVITY = 5.0
 balloon_sprite = NodePath("AnimatedSprite2D")
 bubble_sfx = ExtResource("14_c43xd")
 pop_sfx = ExtResource("10_qidb7")
+icon = ExtResource("18_xixlo")
 ability_name = "GUMBALLOON"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MovementFSM/GumManager/BalloonAbility"]
