@@ -10,6 +10,8 @@ var gravity : float = 30
 @export var player_sprite : AnimatedSprite2D
 @export var anim_player : AnimationPlayer
 @export var gum_manager : GumManager
+@export var fsm : FSM
+@export var death_sfx : AudioStream
 
 
 func _ready():
@@ -41,3 +43,6 @@ func apply_gravity(_delta : float):
 func move():
 	if (GameManager.game_paused): return
 	move_and_slide()
+
+func play_death_sound():
+	fsm.play_audio(death_sfx)

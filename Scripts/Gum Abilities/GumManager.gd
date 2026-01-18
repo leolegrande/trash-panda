@@ -74,13 +74,19 @@ func handle_input():
 		change_ability(1)
 	if Input.is_action_just_pressed("Prev Ability"):
 		change_ability(-1)
+	if Input.is_action_just_pressed("Ability 1"):
+		set_ability(0)
+	if Input.is_action_just_pressed("Ability 2"):
+		set_ability(1)
+	if Input.is_action_just_pressed("Ability 3"):
+		set_ability(2)
 
 func change_ability(dir : int):
 	if (ability_list.size() <= 1): return
 	set_ability((current_ability_index+dir)%ability_list.size())
 
 func set_ability(index : int):
-	var new_ability = ability_list[index]
+	var new_ability = ability_list.get(index)
 	if (new_ability):
 		current_ability = new_ability
 		current_ability_index = ability_list.find(current_ability)

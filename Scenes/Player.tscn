@@ -1,7 +1,8 @@
-[gd_scene load_steps=150 format=3 uid="uid://dc2y80l3ut6ac"]
+[gd_scene load_steps=151 format=3 uid="uid://dc2y80l3ut6ac"]
 
 [ext_resource type="Script" uid="uid://j66i53jiggc1" path="res://Scripts/MovementController.gd" id="1_nn08x"]
 [ext_resource type="Script" uid="uid://cotu33y5xe5py" path="res://Scripts/States/FSM.gd" id="2_52ee3"]
+[ext_resource type="AudioStream" uid="uid://jwo8ir1d5ve1" path="res://Textures/Sound Effects/maybe_death_2.wav" id="2_xixlo"]
 [ext_resource type="Script" uid="uid://cnvl733u4i34b" path="res://Scripts/States/GroundState.gd" id="3_bhhdu"]
 [ext_resource type="Script" uid="uid://doauy1wr14ugf" path="res://Scripts/States/AirborneState.gd" id="4_megsn"]
 [ext_resource type="Script" uid="uid://btahc4ldeix6e" path="res://Scripts/States/JumpState.gd" id="5_yoq75"]
@@ -908,12 +909,14 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "gum_manager") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_sprite", "gum_manager", "fsm") groups=["Player"]]
 collision_layer = 2
 collision_mask = 101
 script = ExtResource("1_nn08x")
 player_sprite = NodePath("AnimatedSprite2D")
 gum_manager = NodePath("MovementFSM/GumManager")
+fsm = NodePath("MovementFSM")
+death_sfx = ExtResource("2_xixlo")
 
 [node name="MovementFSM" type="Node2D" parent="." node_paths=PackedStringArray("mc", "animPlayer", "starting_state", "player_audio")]
 script = ExtResource("2_52ee3")
