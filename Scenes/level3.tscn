@@ -4472,6 +4472,13 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("3_5qe4c")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -698.0
+offset_top = 276.0
+offset_right = -468.0
+offset_bottom = 299.0
+text = "Left click to crack that whip!"
+
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/SecondRoom" to="Room Cameras/SecondRoom" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/ThirdRoom" to="Room Cameras/ThirdRoom" method="_on_body_entered"]

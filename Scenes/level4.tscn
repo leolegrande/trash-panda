@@ -1516,6 +1516,13 @@ timelinestring = "timeline4_end"
 position = Vector2(-77, -41)
 shape = SubResource("RectangleShape2D_gaale")
 
+[node name="Label" type="Label" parent="."]
+offset_left = -831.0
+offset_top = 273.0
+offset_right = -545.0
+offset_bottom = 296.0
+text = "Mouse wheel through gum powers!"
+
 [connection signal="body_entered" from="FireHydrant/Death Bounds" to="FireHydrant/Death Bounds" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/First Room2" to="Room Cameras/First Room2" method="_on_body_entered"]

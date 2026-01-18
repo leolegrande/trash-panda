@@ -898,7 +898,7 @@ texture_filter = 1
 position = Vector2(0, -35)
 scale = Vector2(1.5333333, 1.5333333)
 sprite_frames = SubResource("SpriteFrames_yf17c")
-animation = &"idle_gum"
+animation = &"idle"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
 volume_db = -20.0

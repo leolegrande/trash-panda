@@ -2566,6 +2566,15 @@ centered = false
 script = ExtResource("36_dr50b")
 timelinestring = "timeline1_start"
 
+[node name="Label" type="Label" parent="."]
+offset_left = -609.0
+offset_top = 196.0
+offset_right = -416.0
+offset_bottom = 245.0
+text = "Right click to chew!
+Left click to blow bubble!"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="Level_Complete_Trigger" to="Level_Complete_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/Second Room" to="Room Cameras/Second Room" method="_on_body_entered"]
