@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dsnav2fssekkr" path="res://Scripts/Level Scripts/LevelManager.gd" id="1_o1sn7"]
 [ext_resource type="AudioStream" uid="uid://dv8q55cru8wpr" path="res://Music/level2_music.ogg" id="2_5flq6"]
 [ext_resource type="Texture2D" uid="uid://dtkeed4hoaqu8" path="res://Textures/Tilesets/tilemap.png" id="2_arpkj"]
+[ext_resource type="PackedScene" uid="uid://mtpm1m4sdwrj" path="res://Scenes/dialogue_trigger.tscn" id="16_5flq6"]
 [ext_resource type="PackedScene" uid="uid://dc2y80l3ut6ac" path="res://Scenes/Player.tscn" id="16_yj6rp"]
 [ext_resource type="PackedScene" uid="uid://b6pbse5p4p00g" path="res://Scenes/UI Scenes/UI_Scene.tscn" id="20_vhtgj"]
 [ext_resource type="PackedScene" uid="uid://ddcvkt44pqo02" path="res://Scenes/UI Scenes/level_complete_screen.tscn" id="21_w4lnf"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://d1cyrcwggl0cw" path="res://Textures/Objects/Other animals/Lizard/lizard6.png" id="28_f7o3i"]
 [ext_resource type="Script" uid="uid://cul0dyjffi5i3" path="res://Scripts/Level Scripts/CameraTransition.gd" id="29_yjaoa"]
 [ext_resource type="Script" uid="uid://bv780htofeasj" path="res://Scripts/Level Scripts/DeathBound.gd" id="32_se7y5"]
-[ext_resource type="Script" uid="uid://dwrybgfolh88x" path="res://Scenes/dialogue.gd" id="33_uvwjj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqk3y"]
 texture = ExtResource("2_arpkj")
@@ -803,10 +803,6 @@ position = Vector2(-492, -146)
 position = Vector2(-41, 313.375)
 shape = SubResource("RectangleShape2D_5mqgo")
 
-[node name="Dialogue" type="Node2D" parent="."]
-script = ExtResource("33_uvwjj")
-timelinestring = "timeline2_start"
-
 [node name="Player" parent="." instance=ExtResource("16_yj6rp")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" groups=["MainCam"]]
@@ -816,6 +812,10 @@ rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("27_u1na6")
+
+[node name="Dialogue_Trigger" parent="." instance=ExtResource("16_5flq6")]
+position = Vector2(-224, 112)
+timelinestring = "timeline2_start"
 
 [connection signal="body_entered" from="Level_Complete_Trigger" to="Level_Complete_Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Room Cameras/First Room" to="Room Cameras/First Room" method="_on_body_entered"]
