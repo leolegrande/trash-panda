@@ -44,9 +44,11 @@ directories/dtl_directory={
 }
 layout/style_directory={
 "": "res://Dialogue/Styles/style1.tres",
-"style1": "res://Dialogue/Styles/style1.tres"
+"style1": "res://Dialogue/Styles/style1.tres",
+"style2": "res://style2.tres",
+"style3": "res://style3.tres"
 }
-layout/style_list=["res://Dialogue/Styles/style1.tres"]
+layout/style_list=["res://Dialogue/Styles/style1.tres", "res://style2.tres", "res://style3.tres"]
 layout/default_style="res://Dialogue/Styles/style1.tres"
 glossary/default_case_sensitive=true
 variables={}
