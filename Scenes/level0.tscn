@@ -859,12 +859,11 @@ script = ExtResource("1_svvko")
 init_bounds = NodePath("Room Cameras/First Room/RoomBounds2")
 level_music = ExtResource("2_kf8fq")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player_sprite", "gum_manager", "fsm") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("player_sprite", "fsm") groups=["Player"]]
 collision_layer = 2
 collision_mask = 101
 script = ExtResource("3_r5hho")
 player_sprite = NodePath("AnimatedSprite2D")
-gum_manager = NodePath("")
 fsm = NodePath("MovementFSM")
 death_sfx = ExtResource("4_lk370")
 
@@ -1040,7 +1039,7 @@ collision_enabled = false
 [node name="THE BRANCH" type="TileMapLayer" parent="Tilemaps"]
 texture_filter = 1
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AABSANv/AAANABwAAABSANz/AAANAB4AAABTANv/AAANABwAAABTANz/AAANAB4AAABUANv/AAANABwAAABUANz/AAANAB4AAABVANv/AAAOABwAAABVANz/AAAOAB4AAAC2AAoAAAAZAA8AAAC3AAoAAAAZAA8AAAC2AAUAAAAZAA8AAAC2AAYAAAAZAA8AAAC2AAcAAAAZAA8AAAC2AAgAAAAZAA8AAAC2AAkAAAAZAA8AAAC4AAoAAAAZAA8AAAC5AAoAAAAZAA8AAAC6AAUAAAAZAA8AAAC6AAYAAAAZAA8AAAC6AAcAAAAZAA8AAAC6AAgAAAAZAA8AAAC6AAkAAAAZAA8AAAC6AAoAAAAZAA8AAAA=")
+tile_map_data = PackedByteArray("AABSANv/AAANABwAAABSANz/AAANAB4AAABTANv/AAANABwAAABTANz/AAANAB4AAABUANv/AAANABwAAABUANz/AAANAB4AAABVANv/AAAOABwAAABVANz/AAAOAB4AAAA=")
 tile_set = ExtResource("20_tir8l")
 
 [node name="PlatformTileMapLayer2" type="TileMapLayer" parent="Tilemaps"]

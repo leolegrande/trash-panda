@@ -28,12 +28,12 @@ script = ExtResource("2_pq08f")
 scene = ExtResource("5_mvcie")
 overrides = {
 "box_distance": "300.0",
-"box_modulate_custom_color": "Color(0.9453125, 0.82714844, 0.82714844, 1)",
+"box_modulate_custom_color": "Color(0.96862745, 0.87058824, 0.87058824, 1)",
 "box_modulate_global_color": "false",
 "box_size": "Vector2(800, 200)",
 "name_label_color_mode": "2",
 "name_label_custom_color": "Color(1, 1, 1, 0.003921569)",
-"portrait_bg_modulate": "Color(0.32806396, 0.36859512, 0.9765625, 1)",
+"portrait_bg_modulate": "Color(0.80078125, 0.7194519, 0.7194519, 1)",
 "text_alignment": "1",
 "text_custom_color": "Color(0.04296875, 0.033233643, 0.0040283203, 1)",
 "text_use_global_color": "false"

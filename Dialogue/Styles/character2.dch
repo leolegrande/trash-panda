@@ -7,25 +7,15 @@
 "prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "style1",
+"style": "",
 "suffix": ""
 },
-&"default_portrait": "main",
+&"default_portrait": "",
 &"description": "",
-&"display_name": "Narrator",
+&"display_name": "Character 2",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {
-"main": {
-"export_overrides": {
-"image": "\"res://Textures/Animal Portrait_14.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-}
-},
+&"portraits": {},
 &"scale": 1.0
 }

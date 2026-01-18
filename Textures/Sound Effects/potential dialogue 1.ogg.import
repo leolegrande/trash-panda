@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dih7r8ljx8gc4"
+path="res://.godot/imported/potential dialogue 1.ogg-f7492dc588bcf7a3b014ecb5b5f2394e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Textures/Sound Effects/potential dialogue 1.ogg"
+dest_files=["res://.godot/imported/potential dialogue 1.ogg-f7492dc588bcf7a3b014ecb5b5f2394e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
